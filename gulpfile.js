@@ -130,27 +130,27 @@ gulp.task('watch:server:run-tests', function () {
 
 // CSS linting task
 gulp.task('csslint', function () {
-  return gulp.src(defaultAssets.client.css)
-    .pipe(plugins.csslint('.csslintrc'))
-    .pipe(plugins.csslint.formatter());
-    // Don't fail CSS issues yet
-    // .pipe(plugins.csslint.failFormatter());
+  // return gulp.src(defaultAssets.client.css)
+  //   .pipe(plugins.csslint('.csslintrc'))
+  //   .pipe(plugins.csslint.formatter());
+  //   // Don't fail CSS issues yet
+  //   // .pipe(plugins.csslint.failFormatter());
 });
 
 // ESLint JS linting task
 gulp.task('eslint', function () {
-  var assets = _.union(
-    defaultAssets.server.gulpConfig,
-    defaultAssets.server.allJS,
-    defaultAssets.client.js,
-    testAssets.tests.server,
-    testAssets.tests.client,
-    testAssets.tests.e2e
-  );
+  // var assets = _.union(
+  //   defaultAssets.server.gulpConfig,
+  //   defaultAssets.server.allJS,
+  //   defaultAssets.client.js,
+  //   testAssets.tests.server,
+  //   testAssets.tests.client,
+  //   testAssets.tests.e2e
+  // );
 
-  return gulp.src(assets)
-    .pipe(plugins.eslint())
-    .pipe(plugins.eslint.format());
+  // return gulp.src(assets)
+  //   .pipe(plugins.eslint())
+  //   .pipe(plugins.eslint.format());
 });
 
 // JS minifying task
