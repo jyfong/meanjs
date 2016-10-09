@@ -61,3 +61,14 @@ exports.renderNotFound = function (req, res) {
     }
   });
 };
+
+exports.images = function (req, res) {
+  var fs = require('fs');
+
+  fs.readdir('public/abc', function(err, items) {
+    var itemsUrl = items.map(function(item) {
+      return 'localhost:3000/abc/'+item;
+    });
+    res.json(itemsUrl);
+});
+}

@@ -7,5 +7,9 @@
 
   function HomeController() {
     var vm = this;
+
+    $http.get('/images/abc', {}).then(function(res){
+    	$scope.images = res;
+    });
   }
 }());
