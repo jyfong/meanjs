@@ -34,7 +34,7 @@
         controllerAs: 'vm'
       })
       .state('template1', {
-        url: '/',
+        url: '/template1',
         templateUrl: 'modules/core/client/views/template1.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'

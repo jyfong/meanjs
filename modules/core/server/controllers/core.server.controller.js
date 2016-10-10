@@ -70,5 +70,9 @@ exports.images = function (req, res) {
       return 'localhost:3000/abc/'+item;
     });
     res.json(itemsUrl);
-});
+  });
+}
+
+exports.upload = function (req, res, next) {
+  res.json({success: true});
 }

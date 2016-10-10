@@ -3,6 +3,9 @@
 module.exports = function (app) {
   // Root routing
   var core = require('../controllers/core.server.controller');
+  var express = require('express')
+  , router = express.Router()
+  , multer = require('multer')
 
   // Define error pages
   app.route('/server-error').get(core.renderServerError);
@@ -12,6 +15,13 @@ module.exports = function (app) {
 
 
   app.route('/images/abc').get(core.images);
+
+  var uploading = multer({
+  	dest: __dirname + '/uploads/',
+  })
+
+
+  app.route('/upload', uploading.array('photos', 12)).post(core.upload);
   
   // Define application route
   app.route('/*').get(core.renderIndex);
