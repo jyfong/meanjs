@@ -39,6 +39,18 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .state('editor', {
+        url: '/editor',
+        templateUrl: 'modules/core/client/views/editor.client.view.html',
+        controller: 'EditorController',
+        controllerAs: 'vm'
+      })
+      .state('overview', {
+        url: '/overview',
+        templateUrl: 'modules/core/client/views/overview.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: 'modules/core/client/views/404.client.view.html',
