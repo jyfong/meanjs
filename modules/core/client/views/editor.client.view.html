@@ -570,9 +570,9 @@
                 <div id="InputElement" class="panel-collapse collapse" role="tabpanel" aria-labelledby="InputElementTab">
                   <div class="panel-body">
                     <label class="software-label">Display Form</label>
-                    <select id="input-show-hide" class="form-control software-dropdown">
-                      <option value="inputshow">Show</option>
-                      <option value="inputhide">Hide</option>
+                    <select ng-model="isFormVisible" id="input-show-hide" class="form-control software-dropdown">
+                      <option value=false>Show</option>
+                      <option value=true>Hide</option>
                     </select>
                     <br />
                     <div class="input-show-hide-option inputshow">
@@ -599,7 +599,7 @@
                         </select>
                         <br />
                         <label class="software-label">PlaceHolder Text</label>
-                        <input type="text" class="form-control smallinput" / />
+                        <input ng-model="firstTB.placeholder" type="text" class="form-control smallinput" / />
                         <br />
                         <label class="software-label">Required</label>
                         <select class="form-control software-dropdown">
@@ -616,7 +616,7 @@
                           </select>
                           <br />
                           <label class="software-label">PlaceHolder Text</label>
-                          <input type="text" class="form-control smallinput" / />
+                          <input ng-model="secondTB.placeholder" type="text" class="form-control smallinput" / />
                           <br />
                           <label class="software-label">Required</label>
                           <select class="form-control software-dropdown">
@@ -627,21 +627,19 @@
                           <h4 class="styles-title">Styles</h4>
                           <hr class="line-divider">
                             <label class="software-label">TextBox Width (eg. 300px)</label>
-                            <input type="text" class="form-control smallinput" / />
+                            <input ng-model="inputTB.width" type="text" class="form-control smallinput" / />
                             <br />
                             <label class="software-label">TextBox Height (eg. 80px)</label>
-                            <input type="text" class="form-control smallinput" / />
+                            <input ng-model="inputTB.height" type="text" class="form-control smallinput" / />
                             <br />
                             <label class="software-label">Background Color</label>
-                            <input type="text" class="form-control smallinput" / />
+                            <input ng-model="inputTB['background-color']" type="text" class="form-control smallinput" / />
                             <br />
                             <label class="software-label">Font Family</label>
-                            <select class="form-control software-dropdown">
-                              <option></option>
-                            </select>
+                            <input ng-model="inputTB['font-family']" type="text" class="form-control smallinput" />
                             <br />
                             <label class="software-label">Font Size</label>
-                            <input type="text" class="form-control smallinput" / />
+                            <input ng-model="inputTB['font-size']" type="text" class="form-control smallinput" / />
                             <br />
                             <label class="software-label">Font Style</label>
                             <select class="form-control software-dropdown">
@@ -651,17 +649,17 @@
                             </select>
                             <br />
                             <label class="software-label">Text Align</label>
-                            <select class="form-control software-dropdown">
-                              <option>Left</option>
-                              <option>Center</option>
-                              <option>Right</option>
+                            <select ng-model="inputTB['text-align']" class="form-control software-dropdown">
+                              <option value='left'>Left</option>
+                              <option value='center'>Center</option>
+                              <option value='right'>Right</option>
                             </select>
                             <br />
                             <label class="software-label">Corners</label>
-                            <select class="form-control software-dropdown">
-                              <option>5px</option>
-                              <option>10px</option>
-                              <option>30px</option>
+                            <select ng-model="inputTB['border-radius']" class="form-control software-dropdown">
+                              <option value='5px'>5px</option>
+                              <option value='10px'>10px</option>
+                              <option value='30px'>30px</option>
                             </select>
                             <br />
                             <label class="software-label">Border</label>
@@ -672,14 +670,14 @@
                             </select>
                             <br />
                             <label class="software-label">Border Width</label>
-                            <select class="form-control software-dropdown">
-                              <option>3px</option>
-                              <option>5px</option>
-                              <option>10px</option>
+                            <select ng-model="inputTB['border-width']" class="form-control software-dropdown">
+                              <option value='3px'>3px</option>
+                              <option value='5px'>5px</option>
+                              <option value='10px'>10px</option>
                             </select>
                             <br />
                             <label class="software-label">Border Color</label>
-                            <input type="text" class="form-control smallinput" / />
+                            <input ng-model="inputTB['border-color']" type="text" class="form-control smallinput" / />
                             <br />
                           </div>
                           <!-- Input show hide option -->
@@ -1085,17 +1083,17 @@
                               <div class="container" ng-style=myconStyle>
                                 <div class="col-md-offset-2 container-style" ng-init="myconClass='col-md-8'" ng-class=myconClass>
                                   <div class="col-md-12 row-style">
-                                    <h1 ng-bind-html=myTextEditor style="text-align:center;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
+                                    <h1 ng-init="myTextEditor='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'" style="text-align:center;">{{myTextEditor}}</h1>
                                     <div class="ecover-style">
                                       <p class="ecover-headline">Journey To The Center Of The Earth </p>
                                       <p class="ecover-authorname">Author Name</p>
                                     </div>
-                                    <div class="custom-form">
+                                    <div ng-hide="isFormVisible=='true'" class="custom-form">
                                       <h2 style="text-align:center;">Enter your name & email below</h2>
                                       <br />
-                                      <input type="text" class="form-control input-style" name="name" placeholder="Enter your name here" required="" />
+                                      <input ng-style=inputTB type="text" class="form-control input-style" name="name" placeholder="{{firstTB.placeholder}}" required="" />
                                       <br />
-                                      <input type="text" class="form-control input-style" name="email" placeholder="Enter your email here" style="margin-top:-10px;" />
+                                      <input ng-style=inputTB type="text" class="form-control input-style" name="email" placeholder="{{secondTB.placeholder}}" style="margin-top:-10px;" />
                                       <br />
                                     </div>
                                     <!-- custom form -->
