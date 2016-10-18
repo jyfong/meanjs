@@ -21,7 +21,8 @@ module.exports = function (app) {
   })
 
 
-  app.route('/upload', uploading.array('photos', 12)).post(core.upload);
+  app.route('/upload', uploading.array('photos', 12)).get(core.upload);
+  app.route('/save').get(core.save);
   
   // Define application route
   app.route('/*').get(core.renderIndex);

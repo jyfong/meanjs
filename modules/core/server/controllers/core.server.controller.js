@@ -3,6 +3,7 @@
 var validator = require('validator'),
   path = require('path'),
   config = require(path.resolve('./config/config'));
+var fs = require('fs');
 
 /**
  * Render the main application page
@@ -74,5 +75,28 @@ exports.images = function (req, res) {
 }
 
 exports.upload = function (req, res, next) {
+
+  console.log(req);
+  // fs.writeFile("public/abc/123.html", req.file, function(err) {
+  //     if(err) {
+  //         return console.log(err);
+  //     }
+
+  //     console.log("The file was saved!");
+  // }); 
   res.json({success: true});
+}
+
+exports.save = function (req, res) {
+
+
+  var fs = require('fs');
+  fs.writeFile("public/abc/template.html", "<html><head></head><body>abc</body></html>", function(err) {
+      if(err) {
+          return console.log(err);
+      }
+
+      console.log("The file was saved!");
+  }); 
+  res.send('')
 }

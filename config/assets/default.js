@@ -28,7 +28,10 @@ module.exports = {
         'public/lib/angular-ui-router/release/angular-ui-router.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'public/lib/summernote/dist/summernote.js',
-        'public/lib/angular-summernote/dist/angular-summernote.js'
+        'public/lib/angular-summernote/dist/angular-summernote.js',
+        'public/lib/flow.js/dist/flow.js',
+        'public/lib/ng-flow/dist/ng-flow.js',
+
         // endbower
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']

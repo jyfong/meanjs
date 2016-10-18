@@ -1012,7 +1012,7 @@ width: 100%;
                             <div class="input-group martop">
                               <div class="drag-slider"></div>
                               <span class="input-group-addon nobg-input">
-                                <input type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                <input ng-model="mybutton['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                               </span>
                             </div>
                             <label class="software-label">Button Type</label>
@@ -1031,13 +1031,13 @@ width: 100%;
                             </div>
                             <!-- buttontype option -->
                             <label class="software-label">Button Text</label>
-                            <input type="text" class="form-control smallinput" / />
+                            <input ng-model="mybutton.text" type="text" class="form-control smallinput" / />
                             <br />
                             <label class="software-label">Button Width (eg. 300px)</label>
-                            <input type="text" class="form-control smallinput" / />
+                            <input ng-model="mybutton.width" type="text" class="form-control smallinput" / />
                             <br />
                             <label class="software-label">Button Height (eg. 80px)</label>
-                            <input type="text" class="form-control smallinput" / />
+                            <input ng-model="mybutton.height" type="text" class="form-control smallinput" / />
                             <br />
                             <label class="software-label">Button Call To Action Text</label>
                             <button class="button-save" style="font-size:14px;" data-toggle="modal" data-target=".button-calltoaction-open-texteditor">Open TextEditor</button>
@@ -1046,18 +1046,16 @@ width: 100%;
                             <h4 class="styles-title">Styles</h4>
                             <hr class="line-divider">
                               <label class="software-label">Background Color</label>
-                              <input type="text" class="form-control smallinput" / />
+                              <input ng-model="mybutton['background-color']" type="text" class="form-control smallinput" / />
                               <br />
                               <label class="software-label">Text Color</label>
-                              <input type="text" class="form-control smallinput" / />
+                              <input ng-model="mybutton['color']" type="text" class="form-control smallinput" / />
                               <br />
                               <label class="software-label">Font Family</label>
-                              <select class="form-control software-dropdown">
-                                <option></option>
-                              </select>
+                              <input ng-model="mybutton['font-family']" class="form-control software-dropdown" />
                               <br />
                               <label class="software-label">Font Size</label>
-                              <input type="text" class="form-control smallinput" / />
+                              <input ng-model="mybutton['font-size']" type="text" class="form-control smallinput" / />
                               <br />
                               <label class="software-label">Font Style</label>
                               <select class="form-control software-dropdown">
@@ -1067,10 +1065,10 @@ width: 100%;
                               </select>
                               <br />
                               <label class="software-label">Corners</label>
-                              <select class="form-control software-dropdown">
-                                <option>5px</option>
-                                <option>10px</option>
-                                <option>30px</option>
+                              <select ng-model="mybutton['border-radius']" class="form-control software-dropdown">
+                                <option value="5px">5px</option>
+                                <option value="10px">10px</option>
+                                <option value="30px">30px</option>
                               </select>
                               <br />
                             </div>
@@ -1107,41 +1105,41 @@ width: 100%;
                               <div class="input-group martop">
                                 <div class="drag-slider"></div>
                                 <span class="input-group-addon nobg-input">
-                                  <input type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                  <input ng-model="ecover['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                 </span>
                               </div>
                               <label class="software-label">Padding Top</label>
                               <div class="input-group martop">
                                 <div class="drag-slider"></div>
                                 <span class="input-group-addon nobg-input">
-                                  <input type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                  <input ng-model="ecover['padding-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                 </span>
                               </div>
                               <label class="software-label">Padding Left & Right</label>
                               <div class="input-group martop">
                                 <div class="drag-slider"></div>
                                 <span class="input-group-addon nobg-input">
-                                  <input type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                  <input ng-model="ecover['padding-left']" ng-model="ecover['padding-right']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                 </span>
                               </div>
                               <label class="software-label">Padding Bottom</label>
                               <div class="input-group martop">
                                 <div class="drag-slider"></div>
                                 <span class="input-group-addon nobg-input">
-                                  <input type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                  <input ng-model="ecover['padding-bottom']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                 </span>
                               </div>
                               <h4 class="styles-title">Styles</h4>
                               <hr class="line-divider">
                                 <label class="software-label">Background Color</label>
-                                <input type="text" class="form-control smallinput" / />
+                                <input ng-model="ecover['background-color']" type="text" class="form-control smallinput" / />
                                 <br />
                                 <label class="software-label">Background Image</label>
                                 <div class="input-group">
                                   <span class="input-group-addon icon-upload" id="sizing-addon2">
                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                   </span>
-                                  <input type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
+                                  <input ng-model="ecover['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
                                 </div>
                                 <br />
                                 <label class="software-label">Background Image Position</label>
@@ -1152,28 +1150,28 @@ width: 100%;
                                 </select>
                                 <br />
                                 <label class="software-label">Ecover Width (eg. 300px)</label>
-                                <input type="text" class="form-control smallinput" / />
+                                <input ng-model="ecover['width']" type="text" class="form-control smallinput" / />
                                 <br />
                                 <label class="software-label">Ecover Height (eg. 400px)</label>
-                                <input type="text" class="form-control smallinput" / />
+                                <input ng-model="ecover['height']" type="text" class="form-control smallinput" / />
                                 <br />
                                 <h4 class="styles-title">Headline</h4>
                                 <hr class="line-divider">
                                   <label class="software-label">Headline Text</label>
-                                  <input type="text" class="form-control smallinput" / />
+                                  <input ng-model="eheadline['text']" type="text" class="form-control smallinput" / />
                                   <br />
                                   <label class="software-label">Font Family</label>
-                                  <select class="form-control software-dropdown"></select>
+                                  <input ng-model="eheadline['font-family']" class="form-control software-dropdown" />
                                   <br />
                                   <label class="software-label">Font Size</label>
                                   <div class="input-group martop">
                                     <div class="drag-slider"></div>
                                     <span class="input-group-addon nobg-input">
-                                      <input type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                      <input ng-model="eheadline['font-size']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                     </span>
                                   </div>
                                   <label class="software-label">Font Color</label>
-                                  <input type="text" class="form-control smallinput" / />
+                                  <input ng-model="eheadline['color']" type="text" class="form-control smallinput" / />
                                   <br />
                                   <label class="software-label">Font Styles</label>
                                   <select class="form-control software-dropdown">
@@ -1183,31 +1181,31 @@ width: 100%;
                                   </select>
                                   <br />
                                   <label class="software-label">Line Height</label>
-                                  <select class="form-control software-dropdown">
-                                    <option>Auto</option>
-                                    <option>1em</option>
-                                    <option>1.2em</option>
-                                    <option>1.5em</option>
-                                    <option>2em</option>
-                                    <option>2.5em</option>
+                                  <select ng-model="eheadline['line-height']" class="form-control software-dropdown">
+                                    <option value="">Auto</option>
+                                    <option value="1em">1em</option>
+                                    <option value="1.2em">1.2em</option>
+                                    <option value="1.5em">1.5em</option>
+                                    <option value="2em">2em</option>
+                                    <option value="2.5em">2.5em</option>
                                   </select>
                                   <h4 class="styles-title">Author Name</h4>
                                   <hr class="line-divider">
                                     <label class="software-label">Text</label>
-                                    <input type="text" class="form-control smallinput" / />
+                                    <input ng-model="eauthor['text']" type="text" class="form-control smallinput" / />
                                     <br />
                                     <label class="software-label">Font Size</label>
                                     <div class="input-group martop">
                                       <div class="drag-slider"></div>
                                       <span class="input-group-addon nobg-input">
-                                        <input type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                        <input ng-model="eauthor['font-size']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                       </span>
                                     </div>
                                     <label class="software-label">Font Color</label>
-                                    <input type="text" class="form-control smallinput" / />
+                                    <input ng-model="eauthor['color']" type="text" class="form-control smallinput" / />
                                     <br />
                                     <label class="software-label">Background Color</label>
-                                    <input type="text" class="form-control smallinput" / />
+                                    <input ng-model="eauthor['background-color']" type="text" class="form-control smallinput" / />
                                     <br />
                                   </div>
                                   <!-- ecover show hide option -->
@@ -1378,14 +1376,19 @@ width: 100%;
                           <div class="col-md-8 col-md-offset-2">
                             <div class="well">
                               <!-- <iframe ui-sref="template1" style="border:0px #FFFFFF none;" name="myiFrame" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" height="1000" width="100%"></iframe> -->
+                              <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TEMPLATE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+                          
+
                               <div id="over" style="width:100%;height:5px; position:fixed;background:;top:0px; z-index:1000; cursor:none;"></div>
                               <div class="container" ng-style=myconStyle>
                                 <div class="col-md-offset-2 container-style" ng-init="myconClass='col-md-8'" ng-class=myconClass>
                                   <div class="col-md-12 row-style">
                                     <h1 ng-init="myTextEditor='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'" style="text-align:center;">{{myTextEditor}}</h1>
-                                    <div class="ecover-style">
-                                      <p class="ecover-headline">Journey To The Center Of The Earth </p>
-                                      <p class="ecover-authorname">Author Name</p>
+                                    <div class="ecover-style" ng-style=ecover>
+                                      <p class="ecover-headline" ng-style=eheadline>{{eheadline.text}}</p>
+                                      <p class="ecover-authorname" ng-style=eauthor>{{eauthor.text}}</p>
                                     </div>
                                     <div ng-hide="isFormVisible=='true'" class="custom-form">
                                       <h2 style="text-align:center;">Enter your name & email below</h2>
@@ -1396,7 +1399,7 @@ width: 100%;
                                       <br />
                                     </div>
                                     <!-- custom form -->
-                                    <button class="button-style">Free Instant Access</button>
+                                    <button class="button-style" ng-style=mybutton>{{mybutton.text}}</button>
                                   </div>
                                   <!-- row -->
                                 </div>
@@ -1503,8 +1506,16 @@ Copyright 2016 AllRights Reserved</p>
                                 <input ng-model="selectedImg" type="text" class="form-control" placeholder="http://imageurl.com" aria-describedby="sizing-addon2" />
                               </div>
                             </div>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Uploade Image</button>
+                            <!-- <button type="button" class="btn btn-primary">Uploade Image</button> -->
+                            <div flow-init="{target: '/upload'}"
+                               flow-files-submitted="$flow.upload()"
+                               flow-file-success="$file.msg = $message">
+
+
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <span class="btn btn-primary" flow-btn>Upload Image</span>
+
+                            </div>
                           </div>
                         </div>
                       </div>
