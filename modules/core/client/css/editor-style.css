@@ -31,7 +31,7 @@
 	background-color: #555 !important;
 }*/
 
-
+/*
 #sidebar-wrapper::-webkit-scrollbar {
     width: 0px;
     
@@ -52,8 +52,6 @@
 
 position: fixed;
 left:0;
-/*
-background:#222528;*/
 background:#222;
 top:0;
 bottom: 0;
@@ -79,8 +77,6 @@ background-color: transparent;
 
 
 .editor-nav-active{
-  /*
-  background: #4DCBA9;*/
   background:#68c0b0;
 color: white !important;
 }
@@ -236,8 +232,6 @@ font-weight:normal;
 .button-save{
   font-family: 'GothamRounded-Medium';
 font-weight:normal;
-/*
-background: #4CAF50;*/
 background:#20b96f;
 color: rgba(255,255,255, 0.8);
 border-left: none;
@@ -327,8 +321,6 @@ cursor: pointer !important;
 
  font-family: 'GothamRounded-Medium';
 font-weight:normal;
-/*
-background: #4CAF50;*/
 background:#222;
 color: rgba(255,255,255, 0.8);
 border-left: none;
@@ -368,8 +360,6 @@ border:3px dashed #ccc;
 
  font-family: 'GothamRounded-Medium';
 font-weight:normal;
-/*
-background: #4CAF50;*/
 background:#222;
 color: rgba(255,255,255, 0.8);
 border-left: none;
@@ -403,13 +393,6 @@ position: absolute;
 left:50px;
 top:20px;
 }
-/*
-.button-sub-text{
-font-size: 10px;
-font-family: 'Roboto', sans-serif;
-color: rgba(255,255,255, 0.4);
-
-}*/
 
 .hover-div{
 width: 100%;
@@ -556,3 +539,4 @@ line-height: 37px;
 }
 
 
+*/
