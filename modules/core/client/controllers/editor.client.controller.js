@@ -30,6 +30,17 @@ var debug;
       // $(".summernote").summernote('destroy');
     }
 
+    $scope.saveTemplate = function() {
+        var html = $("#mycon").html();
+
+
+        $http.post('/save', {data: html}).then(function(res){
+        });
+    }
+
+    $scope.mycon = {};
+    $scope.mycon.id = "mycon";
+
     $scope.firstTB = {};
     $scope.firstTB.type = 'text';
     $scope.firstTB.placeholder = 'Enter your name here';

@@ -27,7 +27,7 @@ module.exports = function (app) {
 
 
   // app.route('/upload').post(upload.single('blob'), core.upload);
-  // app.route('/save').get(core.save);
+  app.route('/save').post(core.save);
 
 
 
