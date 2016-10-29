@@ -90,16 +90,21 @@ exports.upload = function (req, res, next) {
 
 exports.save = function (req, res) {
 
-  console.log('save', req.body);
-  var fs = require('fs');
-  fs.writeFile("public/abc/template.html", "<html><head></head><body>"+req.body.data+"</body></html>", function(err) {
-      if(err) {
-          return console.log(err);
-      }
 
-      console.log("The file was saved!");
-  }); 
-  res.send('')
+
+  fs.readFile("modules/core/server/views/template1.html", 'utf8', function(err, data) {
+
+    var fs = require('fs');
+    fs.writeFile("public/abc/template.html", data+req.body.data+"</body></html>", function(err) {
+        if(err) {
+            return console.log(err);
+        }
+
+        console.log("The file was saved!");
+    }); 
+    res.send('')
+  });
+
 }
 
 
@@ -140,3 +145,6 @@ exports.save = function (req, res) {
   //     else
   //         res.send({image: false, file: req.files.userFile.originalname, savedAs: req.files.userFile.name});
   // };
+
+
+

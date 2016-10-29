@@ -1,4 +1,4 @@
-  <section>
+  <section ng-controller="HomeController as vm">
   <style>
 
 .navbar{
@@ -771,9 +771,9 @@ $('.submit-campaign-name').click(function(){
       <div class="col-md-3">
         <ul class="list-group">
           <li class="list-group-item profile-bg" style="border:none;">
-            <h3 style="font-size:20px;color:white;">Name Here</h3>
+            <h3 style="font-size:20px;color:white;">{{vm.authentication.user.displayName}}</h3>
             <br />
-            <h5 class="roboto-font" style="margin-top:-20px;font-weight:400;color:white;">emailhere@gmail.com</h5>
+            <h5 class="roboto-font" style="margin-top:-20px;font-weight:400;color:white;">{{vm.authentication.user.username}}</h5>
           </li>
           <li class="list-group-item">Account Plan</li>
           <li class="list-group-item">Pages</li>

@@ -33,6 +33,11 @@
         return false;
       }
 
+      if (vm.credentials.password != vm.credentials.confirmPass) {
+        vm.error = "Confirm Password do not match."
+        return false;
+      }
+
       UsersService.userSignup(vm.credentials)
         .then(onUserSignupSuccess)
         .catch(onUserSignupError);

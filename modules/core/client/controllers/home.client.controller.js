@@ -6,8 +6,11 @@ var debug;
     .module('core')
     .controller('HomeController', HomeController);
 
-  function HomeController($scope, $http) {
+  function HomeController($scope, $http, Authentication) {
     var vm = this;
+
+    vm.authentication = Authentication;
+    
     debug = $scope;
 
     $scope.selectedImg = "";

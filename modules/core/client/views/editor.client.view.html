@@ -1071,7 +1071,7 @@ line-height: 37px;
           
       
       </a>
-      <a href="#" class="list-group-item">
+      <a href="abc/template.html" target="_blank" class="list-group-item">
         <i class="fa fa-search-plus" aria-hidden="true"></i>
         <br />Preview
             
@@ -1423,7 +1423,8 @@ line-height: 37px;
                       </span>
                     </div>
                     <label class="software-label">Background Color</label>
-                    <input ng-model="myconStyle['background-color']" type="text" class="form-control smallinput" />
+                    <!-- <input ng-model="myconStyle['background-color']" type="text" class="form-control smallinput" /> -->
+                    <color-picker ng-model="myconStyle['background-color']"></color-picker>
                     <br />
                     <label class="software-label">Background Image</label>
                     <div class="input-group">
@@ -2111,7 +2112,8 @@ line-height: 37px;
                               <div ng-attr-id="{{mycon.id}}" class="container" ng-style=myconStyle>
                                 <div class="col-md-offset-2 container-style" ng-init="myconClass='col-md-8'" ng-class=myconClass>
                                   <div class="col-md-12 row-style">
-                                    <h1 ng-init="myTextEditor='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'" style="text-align:center;">{{myTextEditor}}</h1>
+                                    <h1 ng-init="myTextEditor='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'" ng-bind-html="myTextEditor" style="text-align:center;">
+                                    </h1>
                                     <div class="ecover-style" ng-style=ecover>
                                       <p class="ecover-headline" ng-style=eheadline>{{eheadline.text}}</p>
                                       <p class="ecover-authorname" ng-style=eauthor>{{eauthor.text}}</p>

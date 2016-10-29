@@ -10,7 +10,9 @@ module.exports = {
         'public/lib/bootstrap/dist/css/bootstrap.css',
         // 'public/lib/bootstrap/dist/css/bootstrap-theme.css',
         'public/lib/ng-img-crop/compile/unminified/ng-img-crop.css',
-        'public/lib/summernote/dist/summernote.css'
+        'public/lib/summernote/dist/summernote.css',
+        'public/lib/angular-color-picker/dist/angular-color-picker.css',
+        'public/lib/angular-color-picker/dist/themes/angularjs-color-picker-bootstrap.css'
         // endbower
       ],
       js: [
@@ -31,6 +33,9 @@ module.exports = {
         'public/lib/angular-summernote/dist/angular-summernote.js',
         'public/lib/flow.js/dist/flow.js',
         'public/lib/ng-flow/dist/ng-flow.js',
+        'public/lib/angular-sanitize/angular-sanitize.js',
+        'public/lib/tinycolor/dist/tinycolor-min.js',
+        'public/lib/angular-color-picker/dist/angularjs-color-picker.js'
 
         // endbower
       ],

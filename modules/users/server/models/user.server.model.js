@@ -33,6 +33,24 @@ var validateLocalStrategyEmail = function (email) {
  * User Schema
  */
 var UserSchema = new Schema({
+  fullName: {
+    type: String,
+    trim: true,
+    default: '',
+    validate: [validateLocalStrategyProperty, 'Please fill in your full name']
+  },
+
+  subdomain: {
+    type: String,
+    unique: 'Subdomain already exists',
+    required: 'Please fill in a subdomain',
+    lowercase: true,
+    trim: true
+  },
+  phoneNo: {
+    type: String,
+    trim: true
+  },
   firstName: {
     type: String,
     trim: true,

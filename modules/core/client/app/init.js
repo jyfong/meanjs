@@ -10,7 +10,7 @@
     .module(app.applicationModuleName)
     .config(bootstrapConfig);
 
-  function bootstrapConfig($compileProvider, $locationProvider, $httpProvider) {
+  function bootstrapConfig($provide, $compileProvider, $locationProvider, $httpProvider) {
     $locationProvider.html5Mode(true).hashPrefix('!');
 
     $httpProvider.interceptors.push('authInterceptor');
@@ -18,9 +18,18 @@
     // Disable debug data for production environment
     // @link https://docs.angularjs.org/guide/production
     $compileProvider.debugInfoEnabled(app.applicationEnvironment !== 'production');
+
+
+    $provide.decorator('ColorPickerOptions', function($delegate) {
+        var options = angular.copy($delegate);
+        options.round = true;
+        options.alpha = false;
+        options.format = 'hex';
+        return options;
+    });
   }
 
-  bootstrapConfig.$inject = ['$compileProvider', '$locationProvider', '$httpProvider'];
+  bootstrapConfig.$inject = ['$provide', '$compileProvider', '$locationProvider', '$httpProvider'];
 
   // Then define the init function for starting up the application
   angular.element(document).ready(init);
