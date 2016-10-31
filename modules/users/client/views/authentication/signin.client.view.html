@@ -63,14 +63,42 @@ line-height: 37px;
           <br />
           <br />
           <center>
-            <img src="images/logo.png" width="300" />
+            <img src="modules/core/client/images/logo.png" width="300" />
           </center>
           <br />
           <br />
-          <input type="text" name="" class="form-control inputform" placeholder="Username / Email Address" style="margin-top:-10px;" />
-          <br />
-          <input type="password" name="" class="form-control inputform" placeholder="Password" style="margin-top:-10px;" />
-          <input type="submit" name="submit" class="button-register" value="Login" />
+
+
+
+          <form name="vm.userForm" ng-submit="vm.signin(vm.userForm.$valid)" class="signin" novalidate autocomplete="off">
+            <fieldset>
+              <div class="form-group" show-errors>
+                <input type="text" ng-model="vm.credentials.username" name="" class="form-control inputform" placeholder="Username / Email Address" style="margin-top:-10px;" lowercase required />
+                <div ng-messages="vm.userForm.username.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">Username is required.</p>
+                </div>
+              </div>
+
+
+              <div class="form-group" show-errors>
+                <input type="password" ng-model="vm.credentials.password" name="" class="form-control inputform" placeholder="Password" style="margin-top:-10px;" required/>
+                <div ng-messages="vm.userForm.password.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">Password is required.</p>
+                </div>
+              </div>
+
+
+              <div class="text-center form-group">
+                <button type="submit" class="button-register" >Login</button>
+              </div>
+              <p> 
+                &nbsp;
+              </p>
+              <uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
+                <span ng-bind="vm.error"></span>
+              </uib-alert>
+            </fieldset>
+          </form>
         </div>
         <!-- col-md-6 -->
       </div>

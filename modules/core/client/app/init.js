@@ -19,14 +19,6 @@
     // @link https://docs.angularjs.org/guide/production
     $compileProvider.debugInfoEnabled(app.applicationEnvironment !== 'production');
 
-
-    $provide.decorator('ColorPickerOptions', function($delegate) {
-        var options = angular.copy($delegate);
-        options.round = true;
-        options.alpha = false;
-        options.format = 'hex';
-        return options;
-    });
   }
 
   bootstrapConfig.$inject = ['$provide', '$compileProvider', '$locationProvider', '$httpProvider'];

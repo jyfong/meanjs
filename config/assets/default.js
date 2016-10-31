@@ -11,8 +11,9 @@ module.exports = {
         // 'public/lib/bootstrap/dist/css/bootstrap-theme.css',
         'public/lib/ng-img-crop/compile/unminified/ng-img-crop.css',
         'public/lib/summernote/dist/summernote.css',
-        'public/lib/angular-color-picker/dist/angular-color-picker.css',
-        'public/lib/angular-color-picker/dist/themes/angularjs-color-picker-bootstrap.css'
+        'public/lib/angular-color-picker/dist/angularjs-color-picker.css',
+        'public/lib/angular-color-picker/dist/themes/angularjs-color-picker-bootstrap.css',
+        'public/lib/angular-bootstrap-colorpicker/css/colorpicker.css'
         // endbower
       ],
       js: [
@@ -35,7 +36,9 @@ module.exports = {
         'public/lib/ng-flow/dist/ng-flow.js',
         'public/lib/angular-sanitize/angular-sanitize.js',
         'public/lib/tinycolor/dist/tinycolor-min.js',
-        'public/lib/angular-color-picker/dist/angularjs-color-picker.js'
+        'public/lib/angular-color-picker/dist/angularjs-color-picker.js',
+        'public/lib/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js',
+
 
         // endbower
       ],
