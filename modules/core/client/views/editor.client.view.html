@@ -3,7 +3,6 @@
 <section>
 
 
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <style type="text/css">
 
 
@@ -1062,7 +1061,7 @@ line-height: 37px;
           
       
       </a>
-      <a ng-click="saveTemplate()" href="#" class="main-navigator list-group-item">
+      <a ng-click="update()" href="#" class="main-navigator list-group-item">
         <i class="fa fa-floppy-o" aria-hidden="true"></i>
         <br />Save
                                 
@@ -1071,7 +1070,7 @@ line-height: 37px;
           
       
       </a>
-      <a href="abc/template.html" target="_blank" class="list-group-item">
+      <a ng-click="update()" href="{{vm.authentication.user.subdomain}}/{{page.path}}.html" target="_blank" class="list-group-item">
         <i class="fa fa-search-plus" aria-hidden="true"></i>
         <br />Preview
             
@@ -1343,25 +1342,25 @@ line-height: 37px;
                 <div id="BackgroundSettings" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="BackgroundSettingsTab">
                   <div class="panel-body">
                     <label class="software-label">Background Color</label>
-                    <input type="text" class="form-control smallinput" />
+                    <input colorpicker="rgba" type="text" class="form-control smallinput" />
                     <br />
                     <label class="software-label">Background Image</label>
                     <!--
                                     <input type="text" class="form-control smallinput" /><span class="input-group-addon" id="sizing-addon2">@</span>
                                     -->
                     <div class="input-group">
-                      <span class="input-group-addon icon-upload" id="sizing-addon2">
-                        <i class="fa fa-plus" aria-hidden="true"></i>
+                      <span ng-click="openImages(background, 'background-image')" class="input-group-addon icon-upload" id="sizing-addon2">
+                          <i class="fa fa-plus" aria-hidden="true"></i>
                       </span>
-                      <input type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
+                      <input ng-model="background['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
                     </div>
                     <br />
                     <label class="software-label">Background Image Position</label>
-                    <select class="form-control software-dropdown">
-                      <option>Full Center Fit</option>
-                      <option>Full 100% Width</option>
-                      <option>No Repeat</option>
-                      <option>Repeat</option>
+                    <select ng-model="background" class="form-control software-dropdown">
+                      <option value='{"background-position":"center"}'>Full Center Fit</option>
+                      <option value='{"background-position":""}'>Full 100% Width</option>
+                      <option value='{"background-repeat":"no-repeat"}'>No Repeat</option>
+                      <option value='{"background-repeat":"repeat"}'>Repeat</option>
                     </select>
                     <br />
                   </div>
@@ -1423,15 +1422,14 @@ line-height: 37px;
                       </span>
                     </div>
                     <label class="software-label">Background Color</label>
-                    <!-- <input ng-model="myconStyle['background-color']" type="text" class="form-control smallinput" /> -->
-                    <input colorpicker="rgba" ng-model="myconStyle['background-color']" type="text" ng-model="your_model" />
+                    <input colorpicker="rgba" ng-model="myconStyle['background-color']" type="text" class="form-control smallinput" />
                     <br />
                     <label class="software-label">Background Image</label>
                     <div class="input-group">
                       <span class="input-group-addon icon-upload" id="sizing-addon2">
                         <i class="fa fa-plus" aria-hidden="true"></i>
                       </span>
-                      <input type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
+                      <input ng-click="openImages(myconStyle, 'background-image')" ng-model="myconStyle['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
                     </div>
                     <br />
                     <label class="software-label">Background Image Position</label>
@@ -1472,7 +1470,7 @@ line-height: 37px;
                     </select>
                     <br />
                     <label class="software-label">Border Color</label>
-                    <input type="text" class="form-control smallinput"  ng-model="myconStyle['border-color']" />
+                    <input colorpicker="rgba" type="text" class="form-control smallinput" ng-model="myconStyle['border-color']" />
                     <br />
                   </div>
                 </div>
@@ -1525,7 +1523,7 @@ line-height: 37px;
                       </span>
                     </div>
                     <label class="software-label">Background Color</label>
-                    <input type="text" class="form-control smallinput" />
+                    <input colorpicker="rgba" type="text" class="form-control smallinput" />
                     <br />
                     <label class="software-label">Background Image</label>
                     <div class="input-group">
@@ -1659,7 +1657,7 @@ line-height: 37px;
                             <input ng-model="inputTB.height" type="text" class="form-control smallinput" />
                             <br />
                             <label class="software-label">Background Color</label>
-                            <input ng-model="inputTB['background-color']" type="text" class="form-control smallinput" />
+                            <input colorpicker="rgba" ng-model="inputTB['background-color']" type="text" class="form-control smallinput" />
                             <br />
                             <label class="software-label">Font Family</label>
                             <input ng-model="inputTB['font-family']" type="text" class="form-control smallinput" />
@@ -1703,7 +1701,7 @@ line-height: 37px;
                             </select>
                             <br />
                             <label class="software-label">Border Color</label>
-                            <input ng-model="inputTB['border-color']" type="text" class="form-control smallinput" />
+                            <input colorpicker="rgba" ng-model="inputTB['border-color']" type="text" class="form-control smallinput" />
                             <br />
                           </div>
                           <!-- Input show hide option -->
@@ -1774,10 +1772,10 @@ line-height: 37px;
                             <h4 class="styles-title">Styles</h4>
                             <hr class="line-divider">
                               <label class="software-label">Background Color</label>
-                              <input ng-model="mybutton['background-color']" type="text" class="form-control smallinput" />
+                              <input colorpicker="rgba" ng-model="mybutton['background-color']" type="text" class="form-control smallinput" />
                               <br />
                               <label class="software-label">Text Color</label>
-                              <input ng-model="mybutton['color']" type="text" class="form-control smallinput" />
+                              <input colorpicker="rgba" ng-model="mybutton['color']" type="text" class="form-control smallinput" />
                               <br />
                               <label class="software-label">Font Family</label>
                               <input ng-model="mybutton['font-family']" class="form-control software-dropdown" />
@@ -1861,11 +1859,11 @@ line-height: 37px;
                               <h4 class="styles-title">Styles</h4>
                               <hr class="line-divider">
                                 <label class="software-label">Background Color</label>
-                                <input ng-model="ecover['background-color']" type="text" class="form-control smallinput" />
+                                <input colorpicker="rgba" ng-model="ecover['background-color']" type="text" class="form-control smallinput" />
                                 <br />
                                 <label class="software-label">Background Image</label>
                                 <div class="input-group">
-                                  <span class="input-group-addon icon-upload" id="sizing-addon2">
+                                  <span ng-click="openImages(ecover, 'background-image')" class="input-group-addon icon-upload" id="sizing-addon2">
                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                   </span>
                                   <input ng-model="ecover['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
@@ -1900,7 +1898,7 @@ line-height: 37px;
                                     </span>
                                   </div>
                                   <label class="software-label">Font Color</label>
-                                  <input ng-model="eheadline['color']" type="text" class="form-control smallinput" />
+                                  <input colorpicker="rgba" ng-model="eheadline['color']" type="text" class="form-control smallinput" />
                                   <br />
                                   <label class="software-label">Font Styles</label>
                                   <select class="form-control software-dropdown">
@@ -1931,10 +1929,10 @@ line-height: 37px;
                                       </span>
                                     </div>
                                     <label class="software-label">Font Color</label>
-                                    <input ng-model="eauthor['color']" type="text" class="form-control smallinput" />
+                                    <input colorpicker="rgba" ng-model="eauthor['color']" type="text" class="form-control smallinput" />
                                     <br />
                                     <label class="software-label">Background Color</label>
-                                    <input ng-model="eauthor['background-color']" type="text" class="form-control smallinput" />
+                                    <input colorpicker="rgba" ng-model="eauthor['background-color']" type="text" class="form-control smallinput" />
                                     <br />
                                   </div>
                                   <!-- ecover show hide option -->
@@ -1987,7 +1985,7 @@ line-height: 37px;
                                     </select>
                                     <br />
                                     <label class="software-label">Background Color</label>
-                                    <input type="text" class="form-control smallinput" />
+                                    <input colorpicker="rgba" type="text" class="form-control smallinput" />
                                     <br />
                                     <label class="software-label">Background Image</label>
                                     <div class="input-group">
@@ -2040,7 +2038,7 @@ line-height: 37px;
                                       </select>
                                       <br />
                                       <label class="software-label">Border Color</label>
-                                      <input type="text" class="form-control smallinput" />
+                                      <input colorpicker="rgba" type="text" class="form-control smallinput" />
                                       <br />
                                       <label class="software-label">Border Style</label>
                                       <select class="form-control software-dropdown">
@@ -2216,7 +2214,7 @@ line-height: 37px;
                           <div class="row">
                             <div class="col-md-12 images-div-scroll" style="border:1px solid #eee;background:#f5f5f5;height:400px;padding:20px;overflow:scroll;"
                                 >
-                              <img ng-repeat="image in images" ng-click="selectedImg = 'dssds'" src="http://{{image}}" width="150" class="images-inside" />
+                              <img ng-repeat="image in images" ng-click="onSelectImage(image)" src="http://{{image}}" width="150" class="images-inside" />
                             </div>
                           </div>
                           <!-- row -->

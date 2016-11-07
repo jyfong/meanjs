@@ -6,13 +6,14 @@ var debug;
     .module('core')
     .controller('EditorController', EditorController);
 
-  function EditorController($scope, $http) {
+  function EditorController($scope, $http, $stateParams, Authentication) {
     var vm = this;
+    vm.authentication = Authentication;
     debug = $scope;
 
     $scope.selectedImg = "";
 
-    $http.get('/images/abc', {}).then(function(res){
+    $http.get('/images', {}).then(function(res){
     	$scope.images = res.data;
     	console.log("images: ", res);
     });
@@ -30,13 +31,45 @@ var debug;
       // $(".summernote").summernote('destroy');
     }
 
-    $scope.saveTemplate = function() {
+    var tmp = {va: '', key: ''};
+    $scope.onSelectImage = function(image) {
+        console.log('onSelectImage', image);
+        $(".images-library-pop").modal('hide');
+        tmp.va[tmp.key] = 'url(http://'+image+')';
+    }
+
+    $scope.openImages = function(va, key) {
+        // tmp = 
+
+        $(".images-library-pop").modal('show');
+        tmp = { va: va, key: key };
+    }
+
+
+    $scope.read = function() {
+
+      $http.get('/api-v1/pages/'+$stateParams.id, {}).then(function(res){
+        console.log('res: ', res);
+        $scope.page = res.data;
+      });
+
+    }
+
+    $scope.read();
+
+
+    $scope.update = function() {
         var html = $("#mycon").html();
-
-
-        $http.post('/save', {data: html}).then(function(res){
+        var config = JSON.stringify($scope.settings);
+        $http.post('/api-v1/pages/'+$stateParams.id, {html: html, config: config, path: $scope.page.path}).then(function(res){
+            console.log('res: ', res);
+            $scope.page = res.data;
         });
     }
+    $scope.background = {};
+    $scope.background['background-image'] = '';
+    $scope.background['background-color'] = '';
+    $scope.background['background-position'] = '';
 
     $scope.mycon = {};
     $scope.mycon.id = "mycon";
@@ -97,6 +130,36 @@ var debug;
     $scope.eauthor['font-size'] = '16px';
     $scope.eauthor['color'] = '#ffffff';
     $scope.eauthor['background-color'] = '#FFB300';
+
+    $scope.page = {};
+    $scope.page.title = '';
+    $scope.page.description = '';
+    $scope.page.keywords = '';
+    $scope.page.icon = '';
+
+    $scope.settings = {badge: {}, trackingCode: {}, 
+        footer: {disclaimer: {}, termsNconditions: {}, privacyPolicy: {} },
+        template: {}
+     }
+
+    $scope.settings.badge.display = '';
+    $scope.settings.badge.link = '';
+    $scope.settings.trackingCode.header = '';
+    $scope.settings.trackingCode.body = '';
+    $scope.settings.customCSS = '';
+    $scope.settings.footer.text = '';
+    $scope.settings.footer.disclaimer.display = '';
+    $scope.settings.footer.disclaimer.text = '';
+    $scope.settings.footer.termsNconditions.display = '';
+    $scope.settings.footer.termsNconditions.text = '';
+    $scope.settings.footer.privacyPolicy.display = '';
+    $scope.settings.footer.privacyPolicy.text = '';
+    $scope.settings.template.name = '';
+
+    $scope.email = {webform: {}};
+    $scope.email.webform.code = '';
+    $scope.email.webform.redirectURL = '';
+
 
    }
 }());

@@ -3,8 +3,8 @@ var fs = require('fs'),
     util = require('util'),
     Stream = require('stream').Stream;
 
-module.exports = flow = function(temporaryFolder) {
-    temporaryFolder = 'public/abc';
+module.exports = flow = function(user) {
+    temporaryFolder = 'public/' + user;
     console.log('temporaryFolder', temporaryFolder)
     var $ = this;
     $.temporaryFolder = temporaryFolder;

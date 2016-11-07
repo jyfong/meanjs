@@ -38,6 +38,7 @@ module.exports = {
         'public/lib/tinycolor/dist/tinycolor-min.js',
         'public/lib/angular-color-picker/dist/angularjs-color-picker.js',
         'public/lib/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js',
+        'public/lib/jquery-ui/jquery-ui.js',
 
 
         // endbower

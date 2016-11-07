@@ -31,25 +31,37 @@
         url: '/',
         templateUrl: 'modules/core/client/views/home.client.view.html',
         controller: 'HomeController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('template1', {
         url: '/template1',
         templateUrl: 'modules/core/client/views/template1.client.view.html',
         controller: 'HomeController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('editor', {
-        url: '/editor',
+        url: '/pages/:id',
         templateUrl: 'modules/core/client/views/editor.client.view.html',
         controller: 'EditorController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('overview', {
-        url: '/overview',
+        url: '/campaigns/:campaignId',
         templateUrl: 'modules/core/client/views/overview.client.view.html',
         controller: 'HomeController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('not-found', {
         url: '/not-found',

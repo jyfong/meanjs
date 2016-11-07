@@ -6,6 +6,8 @@ var validator = require('validator'),
 var fs = require('fs');
 var multer = require('multer');
 var img = require('easyimage');
+var mongoose = require('mongoose'),
+    Page = mongoose.model('Page');
 /**
  * Render the main application page
  */
@@ -14,6 +16,9 @@ exports.renderIndex = function (req, res) {
   if (req.user) {
     safeUserObject = {
       displayName: validator.escape(req.user.displayName),
+      fullName: validator.escape(req.user.fullName),
+      subdomain: validator.escape(req.user.subdomain),
+      phoneNo: validator.escape(req.user.phoneNo),
       provider: validator.escape(req.user.provider),
       username: validator.escape(req.user.username),
       created: req.user.created.toString(),
@@ -67,9 +72,9 @@ exports.renderNotFound = function (req, res) {
 exports.images = function (req, res) {
   var fs = require('fs');
 
-  fs.readdir('public/abc', function(err, items) {
+  fs.readdir('public/'+req.user.subdomain, function(err, items) {
     var itemsUrl = items.map(function(item) {
-      return 'localhost:3000/abc/'+item;
+      return 'localhost:3000/'+req.user.subdomain+'/'+item;
     });
     res.json(itemsUrl);
   });
@@ -95,14 +100,32 @@ exports.save = function (req, res) {
   fs.readFile("modules/core/server/views/template1.html", 'utf8', function(err, data) {
 
     var fs = require('fs');
-    fs.writeFile("public/abc/template.html", data+req.body.data+"</body></html>", function(err) {
+    fs.writeFile("public/abc/template.html", data+req.body.html+"</body></html>", function(err) {
         if(err) {
             return console.log(err);
         }
 
         console.log("The file was saved!");
     }); 
-    res.send('')
+    
+    
+  });
+
+
+
+
+  var page = new Page(req.body);
+
+  // Then save the user
+  page.save(function (err) {
+    if (err) {
+      console.log('err: ', err);
+      return res.status(400).send({
+        message: err
+      });
+    } else {
+      res.send('')
+    }
   });
 
 }
@@ -110,18 +133,20 @@ exports.save = function (req, res) {
 
 
 
-  var imgs = ['png', 'jpg', 'jpeg', 'gif', 'bmp']; // only make thumbnail for these
+  // var imgs = ['png', 'jpg', 'jpeg', 'gif', 'bmp']; // only make thumbnail for these
 
-  function getExtension(fn) {
-      return fn.split('.').pop();
-  }
+  // function getExtension(fn) {
+  //   console.log('fn', fn);
+  //     return fn.split('.').pop();
+  // }
 
-  function fnAppend(fn, insert) {
-      var arr = fn.split('.');
-      var ext = arr.pop();
-      insert = (insert !== undefined) ? insert : new Date().getTime();
-      return arr + '.' + insert + '.' + ext;
-  }
+  // function fnAppend(fn, insert) {
+  //   console.log('fnappend', fn);
+  //     var arr = fn.split('.');
+  //     var ext = arr.pop();
+  //     insert = (insert !== undefined) ? insert : new Date().getTime();
+  //     return arr + '.' + insert + '.' + ext;
+  // }
 
 
 
