@@ -1356,11 +1356,7 @@ line-height: 37px;
                     </div>
                     <br />
                     <label class="software-label">Background Image Position</label>
-                    <select ng-model="background" class="form-control software-dropdown">
-                      <option value='{"background-position":"center"}'>Full Center Fit</option>
-                      <option value='{"background-position":""}'>Full 100% Width</option>
-                      <option value='{"background-repeat":"no-repeat"}'>No Repeat</option>
-                      <option value='{"background-repeat":"repeat"}'>Repeat</option>
+                    <select ng-model="background" ng-options="option.value as option.text for option in backgrounda.options" class="form-control software-dropdown">
                     </select>
                     <br />
                   </div>

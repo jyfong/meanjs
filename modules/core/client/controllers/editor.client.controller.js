@@ -66,7 +66,15 @@ var debug;
             $scope.page = res.data;
         });
     }
+
     $scope.background = {};
+    $scope.backgrounda = {};
+    $scope.backgrounda.options = [
+        { value: {"background-position":"center"}, text: 'Full Center Fit' }, 
+        { value: {"background-position":""}, text: 'Full 100% Width' }, 
+        { value: {"background-repeat":"no-repeat"}, text: 'No Repeat' }, 
+        { value: {"background-repeat":"repeat"}, text: 'Repeat' },
+    ]
     $scope.background['background-image'] = '';
     $scope.background['background-color'] = '';
     $scope.background['background-position'] = '';
