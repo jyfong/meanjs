@@ -315,46 +315,404 @@ width: 100%;
 
 </style>
 <body>
-                                <div class="col-md-offset-2 container-style col-md-8" ng-init="myconClass='col-md-8'" ng-class="myconClass">
-                                  <div class="col-md-12 row-style">
-                                    <h1 ng-init="myTextEditor='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'" ng-bind-html="myTextEditor" style="text-align:center;" class="ng-binding">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
-                                    <div class="ecover-style" ng-style="ecover" style="margin-top: 30px; padding: 30px 20px 40px; background-color: rgb(0, 0, 0); background-image: url(&quot;http://hdfreewallpaper.net/wp-content/uploads/2015/10/hd-wall-paper-earth-free-hd-wallpapers-for-desktop.jpg&quot;); background-position: center center; width: 280px; height: 350px;">
-                                      <p class="ecover-headline ng-binding" ng-style="eheadline" style="font-size: 30px; color: rgb(255, 255, 255); line-height: 1.2em;">Journey To The Center Of The Earth</p>
-                                      <p class="ecover-authorname ng-binding" ng-style="eauthor" style="font-size: 16px; color: rgb(255, 255, 255); background-color: rgb(255, 179, 0);">Author Name</p>
-                                    </div>
-                                    <div ng-hide="isFormVisible=='true'" class="custom-form">
-                                      <h2 style="text-align:center;">Enter your name &amp; email below</h2>
-                                      <br>
-                                      <input ng-style="inputTB" type="text" class="form-control input-style" name="name" placeholder="Enter your name here" required="" style="width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 3px; border-color: rgb(221, 221, 221);">
-                                      <br>
-                                      <input ng-style="inputTB" type="text" class="form-control input-style" name="email" placeholder="Enter your email here" style="margin-top: -10px; width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 3px; border-color: rgb(221, 221, 221);">
-                                      <br>
-                                    </div>
-                                    <!-- custom form -->
-                                    <button class="button-style ng-binding" ng-style="mybutton" style="background-color: rgb(76, 175, 80); color: rgb(255, 255, 255); font-family: Roboto, sans-serif; font-size: 20px; border-radius: 5px;">Free Instant Access</button>
-                                  </div>
-                                  <!-- row -->
-                                </div>
-                                <!-- col-md-10 -->
-                                <div class="col-md-12" style="margin-top:-10px;margin-bottom:50px;">
-                                  <center>
-                                    <p style="color:#999;font-size:12px;">Copyright 2016 AllRights Reserved</p>
-                                    <p style="text-align:center; font-size:12px;color:#999;">
-                                      <a href="http://" style="color:#999;">Terms &amp; Disclaimer</a> | 
+    <div id="over" style="width:100%;height:5px; position:fixed;background:;top:0px; z-index:1000; cursor:none;"></div>
+    <div class="background" ng-style="styles.background" style="background-color: rgb(0, 0, 0); background-image: url(&quot;http://localhost:3000/abc/29697986486_2387baeb7e_k.jpg&quot;); background-position: center center;">
+    <script type="text/javascript">
+  
+
+      $(document).ready(function(){
+
+        $("#over").mousemove(function(e) {
+          // $(".trigger-exitpop").click();  
+        });
+      });
+    </script>
+  <style type="text/css">
+
+
+.background{
+
+background-color:#000000;
+background-image:url(http://www.hd-wallpapersdownload.com/script/widescreen-wallpapers/desktop-earth-moving-wallpaper-dowload.jpg);
+background-repeat:no-repeat;
+background-size:cover;
+background-attachment:fixed; 
+background-position: center;
+
+
+}
+
+.container-style{
+
+background-color:#ffffff;
+background-image:;
+background-repeat:;
+background-size:;
+
+
+margin-top: 70px;
+margin-bottom: 70px;
+
+padding-top: 30px;
+padding-bottom: 70px;
+padding-left: 0px;
+padding-right: 0px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+
+border-left-width:3px;
+border-right-width:3px;
+border-top-width:3px;
+border-bottom-width:3px;
+
+border-color: #222222;
+border-style: solid;
+
+
+}
+
+.row-style{
+
+margin-top: 0px;
+padding-left: 40px;
+padding-right: 40px;
+padding-top: 10px;
+padding-bottom: 10px;
+
+background-color:;
+background-image:;
+background-repeat:;
+background-size:;
+
+
+}
+
+.input-style{
+
+display: block;
+width: 500px;
+height: 50px;
+margin: 0 auto;
+
+background-color: #ffffff;
+font-family:;
+font-weight:;
+font-style:;
+font-size:; 
+text-align:left;
+
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+
+border-left-width:1px;
+border-right-width:1px;
+border-top-width:1px;
+border-bottom-width:1px;
+
+border-color: #dddddd;
+border-style: solid;
+
+
+
+}
+
+
+.custom-form{
+display: block;
+margin-top: 20px;
+
+}
+
+
+
+
+
+
+
+.button-style{
+display: block;
+margin: -10px auto;
+
+width: 400px;
+height: 55px;
+color: #ffffff;
+
+background-color: #4CAF50;
+font-family: 'Roboto', sans-serif;
+font-weight:bold;
+font-style:normal;
+font-size:20px; 
+text-align:center;
+
+
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+
+border-left-width:0;
+border-right-width:0;
+border-top-width:0;
+border-bottom-width:3px;
+
+border-color: rgba(0,0,0, 0.3);
+border-style: solid;
+
+
+
+
+}
+
+
+
+.button-style:hover{
+
+transition: all 0.5s ease 0s;
+
+box-shadow: inset 0 0 0 100px rgba(0,0,0, 0.2);
+
+
+
+}
+
+
+
+
+
+
+.ecover-style{
+
+display: block;
+width: 280px;
+height: 350px;
+margin: 30px auto;
+
+position: relative;
+
+padding-top: 30px;
+padding-left: 20px;
+padding-right: 20px;
+padding-bottom: 40px;
+
+
+background-color: #000000;
+background-image: url(http://hdfreewallpaper.net/wp-content/uploads/2015/10/hd-wall-paper-earth-free-hd-wallpapers-for-desktop.jpg);
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+
+font-family: 'Roboto', sans-serif;
+
+  -webkit-box-shadow: 0 7px 15px -6px rgba(0,0,0, 0.8);
+     -moz-box-shadow: 0 7px 15px -6px rgba(0,0,0, 0.8);
+          box-shadow: 0 7px 15px -6px rgba(0,0,0, 0.8);
+
+border-top-left-radius:2px;
+border-top-right-radius:2px;
+border-bottom-left-radius:2px;
+border-bottom-right-radius:2px;
+
+
+
+}
+
+.ecover-headline{
+
+display: block;
+text-align: center;
+padding-top: 30px;
+font-size: 30px;
+
+font-weight: bold;
+color: #ffffff;
+line-height: 1.2em;
+text-shadow: 0 0 3px #000000;
+
+}
+
+.ecover-authorname{
+padding-top: 2px;
+padding-bottom: 2px;
+
+display:block;
+text-align: center;
+background-color: #FFB300;
+font-size: 16px;
+color: #ffffff;
+font-weight: normal;
+ position: absolute;
+ bottom: 0;
+left:0;
+right: 0;
+
+text-shadow: 0 0 3px rgba(0,0,0, 0.7);
+}
+
+
+
+.exitpop-modal{
+
+margin-top: 10px;
+
+border-top-left-radius:2px;
+border-top-right-radius:2px;
+border-bottom-left-radius:2px;
+border-bottom-right-radius:2px;
+
+border-left-width:5px;
+border-right-width:5px;
+border-top-width:5px;
+border-bottom-width:5px;
+
+border-color: #cccccc;
+border-style: solid;
+
+padding-top: 25px;
+padding-left: 30px;
+padding-right: 30px;
+padding-bottom: 65px;
+
+background-color:#ffffff;
+background-image:url();
+background-repeat:;
+background-size:cover;
+
+
+
+
+}
+
+
+.exitpop-form{
+
+display: block;
+
+}
+
+.exitpop-button{
+
+display: block;
+
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 500px){
+
+.input-style{
+
+width: 100%;
+
+}
+
+
+.button-style{
+
+
+width: 100%;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+      <div class="container">
+        <div ng-attr-id="{{styles.container.id}}" ng-style="styles.container" class="col-md-8 col-md-offset-2 container-style" id="container" style="margin-top: 70px; padding: 30px 0px 70px; border-radius: 5px; border-width: 3px; border-style: solid; border-color: rgb(34, 34, 34);">
+          <div ng-attr-id="{{styles.row.id}}" ng-style="styles.row" class="col-md-12 row-style" id="row" style="margin-top: 0px; padding: 10px 40px;">
+            <h1 ng-attr-id="{{styles.headline.id}}" style="text-align:center;" class="ng-binding" id="headline">Lorem Ipsum is simply dummyabcdef text of the printing and typesetting industry.</h1>
+            <div ng-attr-id="{{styles.ecover.id}}" ng-style="styles.ecover.styles" class="ecover-style" id="ecover" style="margin-top: 30px; padding: 30px 20px 40px; background-color: rgb(0, 0, 0); background-image: url(&quot;http://hdfreewallpaper.net/wp-content/uploads/2015/10/hd-wall-paper-earth-free-hd-wallpapers-for-desktop.jpg&quot;); background-position: center center; width: 280px; height: 350px;">
+              <p ng-style="styles.ecover.headline" class="ecover-headline ng-binding" style="font-size: 30px; color: rgb(255, 255, 255); line-height: 1.2em;">Journey To The Center Of The Earth</p>
+              <p ng-style="styles.ecover.author" class="ecover-authorname ng-binding" style="font-size: 16px; color: rgb(255, 255, 255); background-color: rgb(255, 179, 0);">Author Name</p>
+            </div>
+            <div ng-attr-id="{{styles.inputTF.id}}" ng-style="styles.inputTF.customform" class="custom-form" id="iput" style="margin-top: 20px;">
+              <h2 style="text-align:center;" class="ng-binding">Enter your name &amp; email below</h2>
+              <br>
+              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="name" placeholder="Enter your name here" required="" style="width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
+              <br>
+              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="email" placeholder="Enter your email here" style="margin-top: -10px; width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
+              <br>
+            </div>
+            <!-- custom form -->
+            <button ng-attr-id="{{styles.button.id}}" ng-style="styles.button.styles" class="button-style ng-binding" id="button" style="margin-top: -10px; width: 400px; height: 55px; background-color: rgb(76, 175, 80); color: rgb(255, 255, 255); font-family: Roboto, sans-serif; font-size: 20px; font-style: normal; border-radius: 5px;">Free Instant Access</button>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- col-md-10 -->
+        <div class="col-md-12" style="margin-top:-10px;margin-bottom:50px;">
+          <center>
+            <p style="color:#999;font-size:12px;">
+  Copyright 2016 AllRights Reserved</p>
+            <p style="text-align:center; font-size:12px;color:#999;">
+              <a href="http://" style="color:#999;">Terms &amp; Disclaimer</a> | 
+
+                      
+                
+              <a href="http://" style="color:#999;">Privacy Policy</a> | 
+
+                      
+                
+              <a href="mailto:" style="color:#999;">Support</a> | 
 
                     
-                                      
-                                      <a href="http://" style="color:#999;">Privacy Policy</a> | 
-
-                    
-                                      
-                                      <a href="mailto:" style="color:#999;">Support</a> | 
-
-                  
-                                    
-                                    </p>
-                                    <p style="color:#999;font-size:12px;">This is a disclaimer text</p>
-                                  </center>
-                                </div>
-                                <!-- col-md-12 -->
-                              </body></html>
+              
+            </p>
+            <p style="color:#999;font-size:12px;">This is a disclaimer text</p>
+          </center>
+        </div>
+        <!-- col-md-12 -->
+      </div>
+      <!-- container -->
+      <!-- Large modal -->
+      <button type="button" class="btn btn-primary trigger-exitpop" data-toggle="modal" data-target=".exitpopup" style="display:none;"></button>
+      <div class="modal fade exitpopup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div ng-style="styles.exitpop.styles" class="modal-content exitpop-modal" style="margin-top: 10px; background-color: rgb(255, 255, 255); background-image: url(&quot;&quot;); border-radius: 2px; border-width: 5px; border-color: rgb(204, 204, 204); border-style: solid;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size:30px;margin-top:-20px;margin-right:-15px;">
+              <span aria-hidden="true">×</span>
+            </button>
+            <h1 style="text-align:center;" class="ng-binding">Lorem Ipsum is simply dummyabcdef text of the printing and typesetting industry.</h1>
+            <div class="custom-form exitpop-form">
+              <h2 style="text-align:center;" class="ng-binding">Enter your name &amp; email below</h2>
+              <br>
+              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="name" placeholder="Enter your name here" required="" style="width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
+              <br>
+              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="email" placeholder="Enter your email here" style="margin-top: -10px; width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
+              <br>
+            </div>
+            <!-- custom form -->
+            <button ng-style="styles.button.styles" class="button-style exitpop-button ng-binding" style="margin-top: -10px; width: 400px; height: 55px; background-color: rgb(76, 175, 80); color: rgb(255, 255, 255); font-family: Roboto, sans-serif; font-size: 20px; font-style: normal; border-radius: 5px;">Free Instant Access</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body></html>

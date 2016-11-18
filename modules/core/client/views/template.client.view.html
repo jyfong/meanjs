@@ -1,28 +1,13 @@
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html ng-controller="TemplateController as vm"
-  xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport" />
-    <meta content="yes" name="apple-mobile-web-app-capable" />
-    <title></title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
-  </head>
-  <body>
+<section id="abcdef">
     <div id="over" style="width:100%;height:5px; position:fixed;background:;top:0px; z-index:1000; cursor:none;"></div>
-    <div id="abcdef" class="background" ng-style=styles.background>
+    <div class="background" ng-style=styles.background>
     <script type="text/javascript">
   
 
       $(document).ready(function(){
 
         $("#over").mousemove(function(e) {
-          $(".trigger-exitpop").click();  
+          // $(".trigger-exitpop").click();  
         });
       });
     </script>
@@ -346,31 +331,30 @@ width: 100%;
 
 </style>
       <div class="container">
-        <div ng-style=styles.container class="col-md-8 col-md-offset-2 container-style">
-          <div ng-style=styles.row class="col-md-12 row-style">
-            <h1 style="text-align:center;">{{styles.headline.text}}</h1>
-            <div ng-style=styles.ecover.styles class="ecover-style">
-              <p ng-style=styles.ecover.headline class="ecover-headline">{{styles.ecover.headline.text}}</p>
+        <div ng-attr-id="{{styles.container.id}}" ng-style=styles.container class="col-md-8 col-md-offset-2 container-style">
+          <div ng-attr-id="{{styles.row.id}}" ng-style=styles.row class="col-md-12 row-style">
+            <h1 ng-attr-id="{{styles.headline.id}}" ng-bind-html="styles.headline.text" style="text-align:center;"></h1>
+            <div ng-hide="styles.ecover.visible == 'hide'" ng-attr-id="{{styles.ecover.id}}" ng-style=styles.ecover.styles class="ecover-style">
+              <p ng-style=styles.ecover.headline ng-bind-html="styles.ecover.headline.text" class="ecover-headline"></p>
               <p ng-style=styles.ecover.author class="ecover-authorname">{{styles.ecover.author.text}}</p>
             </div>
-            <div ng-style=styles.inputTF.customform class="custom-form">
-              <h2 style="text-align:center;">{{styles.inputTF.text}}</h2>
+            <div ng-hide="styles.inputTF.visible == 'hide'" ng-attr-id="{{styles.inputTF.id}}" ng-style=styles.inputTF.customform class="custom-form">
+              <h2 ng-bind-html="styles.inputTF.text" style="text-align:center;"></h2>
               <br />
-              <input ng-style=styles.inputTF.styles type="text" class="form-control input-style" name="name" placeholder="{{inputTF.firstTB.placeholder}}" required="" />
+              <input ng-style=styles.inputTF.styles type="text" class="form-control input-style" name="name" placeholder="{{styles.inputTF.firstTB.placeholder}}" required="" />
               <br />
-              <input ng-style=styles.inputTF.styles type="text" class="form-control input-style" name="email" placeholder="{{inputTF.secondTB.placeholder}}" style="margin-top:-10px;" />
+              <input ng-style=styles.inputTF.styles type="text" class="form-control input-style" name="email" placeholder="{{styles.inputTF.secondTB.placeholder}}" style="margin-top:-10px;" />
               <br />
             </div>
             <!-- custom form -->
-            <button ng-style=styles.button.styles class="button-style">{{styles.button.text}}</button>
+            <button ng-hide="styles.button.visible == 'hide'" ng-attr-id="{{styles.button.id}}" ng-style=styles.button.styles ng-bind-html="styles.button.text" class="button-style"></button>
           </div>
           <!-- row -->
         </div>
         <!-- col-md-10 -->
         <div class="col-md-12" style="margin-top:-10px;margin-bottom:50px;">
           <center>
-            <p style="color:#999;font-size:12px;">
-  Copyright 2016 AllRights Reserved</p>
+            <p style="color:#999;font-size:12px;">{{settings.footer.text}}</p>
             <p style="text-align:center; font-size:12px;color:#999;">
               <a href="http://" style="color:#999;">Terms &amp; Disclaimer</a> | 
 
@@ -385,7 +369,7 @@ width: 100%;
                     
               
             </p>
-            <p style="color:#999;font-size:12px;">This is a disclaimer text</p>
+            <p ng-hide="settings.footer.disclaimer == 'off'" style="color:#999;font-size:12px;">{{settings.footer.disclaimerText}}</p>
           </center>
         </div>
         <!-- col-md-12 -->
@@ -403,9 +387,9 @@ width: 100%;
             <div class="custom-form exitpop-form">
               <h2 style="text-align:center;">{{styles.inputTF.text}}</h2>
               <br />
-              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="name" placeholder="{{inputTF.firstTB.placeholder}}" required="" />
+              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="name" placeholder="{{styles.inputTF.firstTB.placeholder}}" required="" />
               <br />
-              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="email" placeholder="{{inputTF.secondTB.placeholder}}" style="margin-top:-10px;" />
+              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="email" placeholder="{{styles.inputTF.secondTB.placeholder}}" style="margin-top:-10px;" />
               <br />
             </div>
             <!-- custom form -->
@@ -414,5 +398,4 @@ width: 100%;
         </div>
       </div>
     </div>
-  </body>
-</html>
+</section>

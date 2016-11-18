@@ -39,7 +39,16 @@
       .state('template1', {
         url: '/template1',
         templateUrl: 'modules/core/client/views/template1.client.view.html',
-        controller: 'HomeController',
+        controller: 'TemplateController',
+        controllerAs: 'vm',
+        data: {
+          roles: ['user', 'admin']
+        }
+      })
+      .state('template', {
+        url: '/template',
+        templateUrl: 'modules/core/client/views/template.client.view.html',
+        controller: 'TemplateController',
         controllerAs: 'vm',
         data: {
           roles: ['user', 'admin']

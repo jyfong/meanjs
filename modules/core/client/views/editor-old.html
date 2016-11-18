@@ -1110,17 +1110,17 @@ line-height: 37px;
                 </div>
                 <div id="MetaTag" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="MetaTagTab">
                   <div class="panel-body">
-                    <label class="software-label">Page Title</label>
-                    <input ng-model="settings.meta.title" type="text" class="form-control smallinput" />
+                    <label class="software-label">Page Title{{name}}</label>
+                    <input type="text" ng-model="name" class="form-control smallinput" />
                     <br />
                     <label class="software-label">Page Description</label>
-                    <input ng-model="settings.meta.description" type="text" class="form-control smallinput" />
+                    <input type="text" class="form-control smallinput" />
                     <br />
                     <label class="software-label">Page Keywords</label>
-                    <input ng-model="settings.meta.keywords" type="text" class="form-control smallinput" />
+                    <input type="text" class="form-control smallinput" />
                     <br />
                     <label class="software-label">Page Icon</label>
-                    <input ng-model="settings.meta.icon" type="text" class="form-control smallinput" />
+                    <input type="text" class="form-control smallinput" />
                     <br />
                   </div>
                 </div>
@@ -1142,13 +1142,13 @@ line-height: 37px;
                 <div id="AffBadge" class="panel-collapse collapse" role="tabpanel" aria-labelledby="AffBadgeTab">
                   <div class="panel-body">
                     <label class="software-label">Display Yes/ No</label>
-                    <select ng-model="settings.badge.visible" class="form-control software-dropdown">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                    <select class="form-control software-dropdown">
+                      <option>Yes</option>
+                      <option>No</option>
                     </select>
                     <br />
                     <label class="software-label">Link</label>
-                    <input ng-model="settings.badge.link" type="text" class="form-control smallinput" />
+                    <input type="text" class="form-control smallinput" />
                     <br />
                   </div>
                 </div>
@@ -1170,10 +1170,10 @@ line-height: 37px;
                 <div id="TrackCode" class="panel-collapse collapse" role="tabpanel" aria-labelledby="TrackCodeTab">
                   <div class="panel-body">
                     <label class="software-label">Header Custom Tracking Code</label>
-                    <textarea ng-model="settings.trackingCodes.header" class="form-control smalltextarea"></textarea>
+                    <textarea class="form-control smalltextarea"></textarea>
                     <br />
                     <label class="software-label">Body Custom Tracking Code</label>
-                    <textarea ng-model="settings.trackingCodes.body" class="form-control smalltextarea"></textarea>
+                    <textarea class="form-control smalltextarea"></textarea>
                     <br />
                   </div>
                 </div>
@@ -1195,7 +1195,7 @@ line-height: 37px;
                 <div id="CustomCSS" class="panel-collapse collapse" role="tabpanel" aria-labelledby="CustomCSSTab">
                   <div class="panel-body">
                     <label class="software-label">Custom CSS Code</label>
-                    <textarea ng-model="settings.customCss" class="form-control smalltextarea"></textarea>
+                    <textarea class="form-control smalltextarea"></textarea>
                     <br />
                   </div>
                 </div>
@@ -1217,34 +1217,34 @@ line-height: 37px;
                 <div id="FooterText" class="panel-collapse collapse" role="tabpanel" aria-labelledby="FooterTextTab">
                   <div class="panel-body">
                     <label class="software-label">Footer Text</label>
-                    <input ng-model="settings.footer.text" type="text" class="form-control smallinput" />
+                    <input type="text" class="form-control smallinput" />
                     <br />
                     <label class="software-label">Disclaimer</label>
-                    <select ng-model="settings.footer.disclaimer" class="form-control software-dropdown">
-                      <option value="off">Off</option>
-                      <option value="on">On</option>
+                    <select class="form-control software-dropdown">
+                      <option>Off</option>
+                      <option>On</option>
                     </select>
                     <br />
                     <label class="software-label">Disclaimer Text</label>
-                    <textarea ng-model="settings.footer.disclaimerText" class="form-control smalltextarea"></textarea>
+                    <textarea class="form-control smalltextarea"></textarea>
                     <br />
                     <label class="software-label">Terms & Conditions</label>
-                    <select ng-model="settings.footer.termsNconditions" class="form-control software-dropdown">
-                      <option value="off">Off</option>
-                      <option value="on">On</option>
+                    <select class="form-control software-dropdown">
+                      <option>Off</option>
+                      <option>On</option>
                     </select>
                     <br />
                     <label class="software-label">Terms & Conditions Text</label>
-                    <textarea ng-model="settings.footer.termsNconditionsText" class="form-control smalltextarea"></textarea>
+                    <textarea class="form-control smalltextarea"></textarea>
                     <br />
                     <label class="software-label">Privacy Policy</label>
-                    <select ng-model="settings.footer.privacyPolicy" class="form-control software-dropdown">
-                      <option value="off">Off</option>
-                      <option value="on">On</option>
+                    <select class="form-control software-dropdown">
+                      <option>Off</option>
+                      <option>On</option>
                     </select>
                     <br />
                     <label class="software-label">Privacy Policy Text</label>
-                    <textarea ng-model="settings.footer.privacyPolicyText" class="form-control smalltextarea"></textarea>
+                    <textarea class="form-control smalltextarea"></textarea>
                     <br />
                   </div>
                 </div>
@@ -1297,13 +1297,13 @@ line-height: 37px;
                 <div id="EmailSettings" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="EmailSettingsTab">
                   <div class="panel-body">
                     <label class="software-label">Copy & Paste Your Autoresponder Html Webform Below. Our System Will Auto Connect Your Webform.</label>
-                    <textarea ng-model="settings.emailSettings.email" class="form-control smalltextarea"></textarea>
+                    <textarea class="form-control smalltextarea"></textarea>
                     <br />
                     <button class="button-save" style="font-size:14px;">Learn How To Copy Web Form</button>
                     <br />
                     <br />
                     <label class="software-label">Redirect URL</label>
-                    <select ng-model="settings.emailSettings.redirectUrl" id="form-redirect" class="form-control software-dropdown">
+                    <select id="form-redirect" class="form-control software-dropdown">
                       <option value="thankyoupage">Thank You Page</option>
                       <option value="customurl">Custom Url</option>
                     </select>
@@ -1323,9 +1323,6 @@ line-height: 37px;
             <!-- Panel Tab/ Group -->
           </div>
           <!-- Main Email Tab -->
-
-
-          <!-- ===================================STYLES=========================== -->
           <div role="tabpanel" class="tab-pane" id="Main-Styles-Tab">
             <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
               <div class="panel panel-default">
@@ -1345,21 +1342,21 @@ line-height: 37px;
                 <div id="BackgroundSettings" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="BackgroundSettingsTab">
                   <div class="panel-body">
                     <label class="software-label">Background Color</label>
-                    <input ng-model="styles.background['background-color']" colorpicker="rgba" type="text" class="form-control smallinput" />
+                    <input ng-model="background['background-color']" colorpicker="rgba" type="text" class="form-control smallinput" />
                     <br />
                     <label class="software-label">Background Image</label>
                     <!--
                                     <input type="text" class="form-control smallinput" /><span class="input-group-addon" id="sizing-addon2">@</span>
                                     -->
                     <div class="input-group">
-                      <span ng-click="openImages(styles.background, 'background-image')" class="input-group-addon icon-upload" id="sizing-addon2">
+                      <span ng-click="openImages(background, 'background-image')" class="input-group-addon icon-upload" id="sizing-addon2">
                           <i class="fa fa-plus" aria-hidden="true"></i>
                       </span>
-                      <input ng-model="styles.background['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
+                      <input ng-model="background['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
                     </div>
                     <br />
                     <label class="software-label">Background Image Position</label>
-                    <select ng-model="styles.background['background-position']" ng-options="option.value as option.text for option in backgrounda.options" class="form-control software-dropdown">
+                    <select ng-model="background['background-position']" ng-options="option.value as option.text for option in backgrounda.options" class="form-control software-dropdown">
                     </select>
                     <br />
                   </div>
@@ -1380,10 +1377,10 @@ line-height: 37px;
                 <div id="ContainerStyle" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ContainerStyleTab">
                   <div class="panel-body">
                     <label class="software-label">Element ID</label>
-                    <input ng-model="styles.container.id" type="text" class="form-control inputelementid" />
+                    <input ng-model="mycon.id" type="text" class="form-control inputelementid" />
                     <br />
                     <label class="software-label">Choose Width</label>
-                    <select ng-model="styles.container.pageWidth" class="form-control software-dropdown">
+                    <select class="form-control software-dropdown" ng-model="myconClass">
                       <option value="col-md-8">Full Page</option>
                       <option value="col-md-6">Wide</option>
                       <option value="col-md-4">Medium</option>
@@ -1394,49 +1391,49 @@ line-height: 37px;
                     <div class="input-group martop">
                       <div class="drag-slider"></div>
                       <span class="input-group-addon nobg-input">
-                        <input ng-model="styles.container['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                        <input ng-model="myconStyle['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                       </span>
                     </div>
                     <label class="software-label">Padding Top</label>
                     <div class="input-group martop">
                       <div class="drag-slider"></div>
                       <span class="input-group-addon nobg-input">
-                        <input ng-model="styles.container['padding-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                        <input ng-model="myconStyle['padding-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                       </span>
                     </div>
                     <label class="software-label">Padding Left & Right</label>
                     <div class="input-group martop">
                       <div class="drag-slider"></div>
                       <span class="input-group-addon nobg-input">
-                        <input ng-model="styles.container['padding-left']" ng-model="styles.container['padding-right']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                        <input ng-model="myconStyle['padding-left']" ng-model="myconStyle['padding-right']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                       </span>
                     </div>
                     <label class="software-label">Padding Bottom</label>
                     <div class="input-group martop">
                       <div class="drag-slider"></div>
                       <span class="input-group-addon nobg-input">
-                        <input ng-model="styles.container['padding-bottom']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                        <input ng-model="myconStyle['padding-bottom']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                       </span>
                     </div>
                     <label class="software-label">Background Color</label>
-                    <input colorpicker="rgba" ng-model="styles.container['background-color']" type="text" class="form-control smallinput" />
+                    <input colorpicker="rgba" ng-model="myconStyle['background-color']" type="text" class="form-control smallinput" />
                     <br />
                     <label class="software-label">Background Image</label>
                     <div class="input-group">
-                      <span ng-click="openImages(styles.container, 'background-image')" class="input-group-addon icon-upload" id="sizing-addon2">
+                      <span ng-click="openImages(myconStyle, 'background-image')" class="input-group-addon icon-upload" id="sizing-addon2">
                         <i class="fa fa-plus" aria-hidden="true"></i>
                       </span>
-                      <input ng-model="styles.container['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
+                      <input ng-model="myconStyle['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
                     </div>
                     <br />
                     <label class="software-label">Background Image Position</label>
-                    <select ng-model="styles.container['background-position']" class="form-control software-dropdown">
+                    <select ng-model="myconStyle['background-position']" class="form-control software-dropdown">
                       <option>Full Center Fit</option>
                       <option>Repeat</option>
                     </select>
                     <br />
                     <label class="software-label">Corners</label>
-                    <select class="form-control software-dropdown" ng-model="styles.container['border-radius']" >
+                    <select class="form-control software-dropdown" ng-model="myconStyle['border-radius']" >
                       <option value=''>None</option>
                       <option value='1px'>1px</option>
                       <option value='3px'>3px</option>
@@ -1448,7 +1445,7 @@ line-height: 37px;
                     </select>
                     <br />
                     <label class="software-label">Border Width</label>
-                    <select class="form-control software-dropdown" ng-model="styles.container['border-width']" >
+                    <select class="form-control software-dropdown" ng-model="myconStyle['border-width']">
                       <option value=''>None</option>
                       <option value='1px'>1px</option>
                       <option value='3px'>3px</option>
@@ -1460,14 +1457,14 @@ line-height: 37px;
                     </select>
                     <br />
                     <label class="software-label">Border Styles</label>
-                    <select class="form-control software-dropdown" ng-model="styles.container['border-styles']" >
+                    <select class="form-control software-dropdown" ng-model="myconStyle['border-style']">
                       <option value='solid'>Solid</option>
                       <option value='dotted'>Dotted</option>
                       <option value='dashed'>Dashed</option>
                     </select>
                     <br />
                     <label class="software-label">Border Color</label>
-                    <input colorpicker="rgba" type="text" class="form-control smallinput" ng-model="styles.container['border-color']"  />
+                    <input colorpicker="rgba" type="text" class="form-control smallinput" ng-model="myconStyle['border-color']" />
                     <br />
                   </div>
                 </div>
@@ -1492,49 +1489,49 @@ line-height: 37px;
                 <div id="RowStyle" class="panel-collapse collapse" role="tabpanel" aria-labelledby="RowStyleTab">
                   <div class="panel-body">
                     <label class="software-label">Element ID</label>
-                    <input ng-model="styles.row['id']" type="text" class="form-control inputelementid" />
+                    <input ng-model="myrow.id" type="text" class="form-control inputelementid" />
                     <br />
                     <label class="software-label">Margin Top</label>
                     <div class="input-group martop">
                       <div class="drag-slider"></div>
                       <span class="input-group-addon nobg-input">
-                        <input ng-model="styles.row['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                        <input ng-model="myrow['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                       </span>
                     </div>
                     <label class="software-label">Padding Top</label>
                     <div class="input-group martop">
                       <div class="drag-slider"></div>
                       <span class="input-group-addon nobg-input">
-                        <input ng-model="styles.row['padding-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                        <input ng-model="myrow['padding-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                       </span>
                     </div>
                     <label class="software-label">Padding Left & Right</label>
                     <div class="input-group martop">
                       <div class="drag-slider"></div>
                       <span class="input-group-addon nobg-input">
-                        <input ng-model="styles.row['padding-left']" ng-model="styles.row['padding-right']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                        <input ng-model="myrow['padding-left']" ng-model="myrow['padding-right']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                       </span>
                     </div>
                     <label class="software-label">Padding Bottom</label>
                     <div class="input-group martop">
                       <div class="drag-slider"></div>
                       <span class="input-group-addon nobg-input">
-                        <input ng-model="styles.row['padding-bottom']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                        <input ng-model="myrow['padding-bottom']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                       </span>
                     </div>
                     <label class="software-label">Background Color</label>
-                    <input ng-model="styles.row['background-color']" colorpicker="rgba" type="text" class="form-control smallinput" />
+                    <input ng-model="myrow['background-color']" colorpicker="rgba" type="text" class="form-control smallinput" />
                     <br />
                     <label class="software-label">Background Image</label>
                     <div class="input-group">
-                      <span ng-click="openImages(styles.row, 'background-image')" class="input-group-addon icon-upload" id="sizing-addon2">
+                      <span ng-click="openImages(myrow, 'background-image')" class="input-group-addon icon-upload" id="sizing-addon2">
                         <i class="fa fa-plus" aria-hidden="true"></i>
                       </span>
-                      <input ng-model="styles.row['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
+                      <input ng-model="myrow['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
                     </div>
                     <br />
                     <label class="software-label">Background Image Position</label>
-                    <select ng-model="styles.row['background-position']" class="form-control software-dropdown">
+                    <select ng-model="myrow['background-position']" class="form-control software-dropdown">
                       <option>Full Center Fit</option>
                       <option>Full 100% Width</option>
                       <option>No Repeat</option>
@@ -1563,17 +1560,17 @@ line-height: 37px;
                 <div id="HeadlineElement" class="panel-collapse collapse" role="tabpanel" aria-labelledby="HeadlineElementTab">
                   <div class="panel-body">
                     <label class="software-label">Element ID</label>
-                    <input ng-model="styles.headline['id']" type="text" class="form-control inputelementid" />
+                    <input ng-model="myheadline['id']" type="text" class="form-control inputelementid" />
                     <br />
                     <label class="software-label">Margin Top</label>
                     <div class="input-group martop">
                       <div class="drag-slider"></div>
                       <span class="input-group-addon nobg-input">
-                        <input ng-model="styles.headline['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                        <input ng-model="myheadline['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                       </span>
                     </div>
                     <label class="software-label">Headline Text</label>
-                    <button class="button-save" style="font-size:14px;" data-toggle="modal" ng-click="open(styles.headline, 'text')">Open TextEditor</button>
+                    <button class="button-save" style="font-size:14px;" data-toggle="modal" data-target=".headline-open-texteditor" ng-click="open(myheadline, 'text')">Open TextEditor</button>
                     <br />
                     <br />
                   </div>
@@ -1596,39 +1593,39 @@ line-height: 37px;
                 <div id="InputElement" class="panel-collapse collapse" role="tabpanel" aria-labelledby="InputElementTab">
                   <div class="panel-body">
                     <label class="software-label">Display Form</label>
-                    <select ng-model="styles.inputTF.visible" id="input-show-hide" class="form-control software-dropdown">
-                      <option value='show'>Show</option>
-                      <option value='hide'>Hide</option>
+                    <select ng-model="inputTB['display']" id="input-show-hide" class="form-control software-dropdown">
+                      <option value=false>Show</option>
+                      <option value=true>Hide</option>
                     </select>
                     <br />
                     <div class="input-show-hide-option inputshow">
                       <label class="software-label">Element ID</label>
-                      <input ng-model="styles.inputTF['id']" type="text" class="form-control inputelementid" />
+                      <input ng-model="inputTB['id']" type="text" class="form-control inputelementid" />
                       <br />
                       <label class="software-label">Margin Top</label>
                       <div class="input-group martop">
                         <div class="drag-slider"></div>
                         <span class="input-group-addon nobg-input">
-                          <input ng-model="styles.inputTF['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                          <input ng-model="inputTB['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                         </span>
                       </div>
                       <label class="software-label">Call To Action Text</label>
-                      <button ng-click="open(styles.inputTF, 'text')" class="button-save" style="font-size:14px;" data-toggle="modal">Open TextEditor</button>
+                      <button ng-click="open(inputTB, 'text')" class="button-save" style="font-size:14px;" data-toggle="modal" data-target=".calltoaction-open-texteditor">Open TextEditor</button>
                       <br />
                       <br />
                       <h4 class="styles-title">First TextBox</h4>
                       <hr class="line-divider">
                         <label class="software-label">Input Type</label>
-                        <select ng-model="styles.inputTF.firstTB['type']" class="form-control software-dropdown">
+                        <select ng-model="firstTB['type']" class="form-control software-dropdown">
                           <option>Name</option>
                           <option>Email Address</option>
                         </select>
                         <br />
                         <label class="software-label">PlaceHolder Text</label>
-                        <input ng-model="styles.inputTF.firstTB['placeholder']" type="text" class="form-control smallinput" />
+                        <input ng-model="firstTB.placeholder" type="text" class="form-control smallinput" />
                         <br />
                         <label class="software-label">Required</label>
-                        <select ng-model="styles.inputTF.firstTB['required']" class="form-control software-dropdown">
+                        <select ng-model="firstTB.required" class="form-control software-dropdown">
                           <option>Required</option>
                           <option>Not Required</option>
                         </select>
@@ -1636,16 +1633,16 @@ line-height: 37px;
                         <h4 class="styles-title">Second TextBox</h4>
                         <hr class="line-divider">
                           <label class="software-label">Input Type</label>
-                          <select ng-model="styles.inputTF.secondTB['type']" class="form-control software-dropdown">
+                          <select ng-model="secondTB.type" class="form-control software-dropdown">
                             <option>Name</option>
                             <option selected="">Email Address</option>
                           </select>
                           <br />
                           <label class="software-label">PlaceHolder Text</label>
-                          <input ng-model="styles.inputTF.secondTB['placeholder']" type="text" class="form-control smallinput" />
+                          <input ng-model="secondTB.placeholder" type="text" class="form-control smallinput" />
                           <br />
                           <label class="software-label">Required</label>
-                          <select ng-model="styles.inputTF.secondTB['required']" class="form-control software-dropdown">
+                          <select ng-model="secondTB.required" class="form-control software-dropdown">
                             <option>Required</option>
                             <option>Not Required</option>
                           </select>
@@ -1653,57 +1650,57 @@ line-height: 37px;
                           <h4 class="styles-title">Styles</h4>
                           <hr class="line-divider">
                             <label class="software-label">TextBox Width (eg. 300px)</label>
-                            <input ng-model="styles.inputTF.styles['width']" type="text" class="form-control smallinput" />
+                            <input ng-model="inputTB.width" type="text" class="form-control smallinput" />
                             <br />
                             <label class="software-label">TextBox Height (eg. 80px)</label>
-                            <input ng-model="styles.inputTF.styles['height']" type="text" class="form-control smallinput" />
+                            <input ng-model="inputTB.height" type="text" class="form-control smallinput" />
                             <br />
                             <label class="software-label">Background Color</label>
-                            <input colorpicker="rgba" ng-model="styles.inputTF.styles['background-color']" type="text" class="form-control smallinput" />
+                            <input colorpicker="rgba" ng-model="inputTB['background-color']" type="text" class="form-control smallinput" />
                             <br />
                             <label class="software-label">Font Family</label>
-                            <input ng-model="styles.inputTF.styles['font-family']" type="text" class="form-control smallinput" />
+                            <input ng-model="inputTB['font-family']" type="text" class="form-control smallinput" />
                             <br />
                             <label class="software-label">Font Size</label>
-                            <input ng-model="styles.inputTF.styles['font-size']" type="text" class="form-control smallinput" />
+                            <input ng-model="inputTB['font-size']" type="text" class="form-control smallinput" />
                             <br />
                             <label class="software-label">Font Style</label>
-                            <select ng-model="styles.inputTF.styles['font-style']" class="form-control software-dropdown">
+                            <select ng-model="inputTB['font-style']" class="form-control software-dropdown">
                               <option>Normal</option>
                               <option>Bold</option>
                               <option>Italic</option>
                             </select>
                             <br />
                             <label class="software-label">Text Align</label>
-                            <select ng-model="styles.inputTF.styles['text-align']" class="form-control software-dropdown">
+                            <select ng-model="inputTB['text-align']" class="form-control software-dropdown">
                               <option value='left'>Left</option>
                               <option value='center'>Center</option>
                               <option value='right'>Right</option>
                             </select>
                             <br />
                             <label class="software-label">Corners</label>
-                            <select ng-model="styles.inputTF.styles['border-radius']" class="form-control software-dropdown">
+                            <select ng-model="inputTB['border-radius']" class="form-control software-dropdown">
                               <option value='5px'>5px</option>
                               <option value='10px'>10px</option>
                               <option value='30px'>30px</option>
                             </select>
                             <br />
                             <label class="software-label">Border</label>
-                            <select ng-model="styles.inputTF.styles['border']" class="form-control software-dropdown">
+                            <select ng-model="inputTB['border']" class="form-control software-dropdown">
                               <option>No Border</option>
                               <option>Full</option>
                               <option>Bottom Only</option>
                             </select>
                             <br />
                             <label class="software-label">Border Width</label>
-                            <select ng-model="styles.inputTF.styles['border-width']" class="form-control software-dropdown">
+                            <select ng-model="inputTB['border-width']" class="form-control software-dropdown">
                               <option value='3px'>3px</option>
                               <option value='5px'>5px</option>
                               <option value='10px'>10px</option>
                             </select>
                             <br />
                             <label class="software-label">Border Color</label>
-                            <input colorpicker="rgba" ng-model="styles.inputTF.styles['border-color']" type="text" class="form-control smallinput" />
+                            <input colorpicker="rgba" ng-model="inputTB['border-color']" type="text" class="form-control smallinput" />
                             <br />
                           </div>
                           <!-- Input show hide option -->
@@ -1729,31 +1726,31 @@ line-height: 37px;
                       <div id="ButtonElement" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ButtonElementTab">
                         <div class="panel-body">
                           <label class="software-label">Display Button</label>
-                          <select ng-model="styles.button['visible']" id="button-show-hide" class="form-control software-dropdown">
-                            <option value="show">Show</option>
-                            <option value="hide">Hide</option>
+                          <select ng-model="mybutton['display']" id="button-show-hide" class="form-control software-dropdown">
+                            <option value="buttonshow">Show</option>
+                            <option value="buttonhide">Hide</option>
                           </select>
                           <br />
                           <div class="button-show-hide-option buttonshow">
                             <label class="software-label">Element ID</label>
-                            <input ng-model="styles.button['id']" type="text" class="form-control inputelementid" />
+                            <input ng-model="mybutton['id']" type="text" class="form-control inputelementid" />
                             <br />
                             <label class="software-label">Margin Top</label>
                             <div class="input-group martop">
                               <div class="drag-slider"></div>
                               <span class="input-group-addon nobg-input">
-                                <input ng-model="styles.button.styles['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                <input ng-model="mybutton['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                               </span>
                             </div>
                             <label class="software-label">Button Type</label>
-                            <select ng-model="styles.button['type']" id="buttontype-show-hide" class="form-control software-dropdown">
+                            <select ng-model="mybutton['type']" id="buttontype-show-hide" class="form-control software-dropdown">
                               <option value="buttonform">Form Button (If you're using form submit)</option>
                               <option value="buttonlink">URL / Link (Clickable link button)</option>
                             </select>
                             <br />
                             <div class="buttontype-option buttonlink" style="display:none;">
                               <label class="software-label">Button URL / Link</label>
-                              <input ng-model="styles.button['link']" type="text" class="form-control smallinput" />
+                              <input ng-model="mybutton['link']" type="text" class="form-control smallinput" />
                               <br />
                               <button ng-click="choosePage()" class="button-save" style="font-size:14px;margin-top:-10px;" data-toggle="modal" data-target=".setup-pages-flow-box">Choose Page</button>
                               <br />
@@ -1761,41 +1758,41 @@ line-height: 37px;
                             </div>
                             <!-- buttontype option -->
                             <label class="software-label">Button Text</label>
-                            <input ng-model="styles.button['text']" type="text" class="form-control smallinput" />
+                            <input ng-model="mybutton.text" type="text" class="form-control smallinput" />
                             <br />
                             <label class="software-label">Button Width (eg. 300px)</label>
-                            <input ng-model="styles.button.styles['width']" type="text" class="form-control smallinput" />
+                            <input ng-model="mybutton.width" type="text" class="form-control smallinput" />
                             <br />
                             <label class="software-label">Button Height (eg. 80px)</label>
-                            <input ng-model="styles.button.styles['height']" type="text" class="form-control smallinput" />
+                            <input ng-model="mybutton.height" type="text" class="form-control smallinput" />
                             <br />
                             <label class="software-label">Button Call To Action Text</label>
-                            <button ng-click="open(styles.button, 'text')" class="button-save" style="font-size:14px;" data-toggle="modal">Open TextEditor</button>
+                            <button class="button-save" style="font-size:14px;" data-toggle="modal" data-target=".button-calltoaction-open-texteditor">Open TextEditor</button>
                             <br />
                             <br />
                             <h4 class="styles-title">Styles</h4>
                             <hr class="line-divider">
                               <label class="software-label">Background Color</label>
-                              <input ng-model="styles.button.styles['background-color']" colorpicker="rgba" ng-model="mybutton['background-color']" type="text" class="form-control smallinput" />
+                              <input colorpicker="rgba" ng-model="mybutton['background-color']" type="text" class="form-control smallinput" />
                               <br />
                               <label class="software-label">Text Color</label>
-                              <input colorpicker="rgba" ng-model="styles.button.styles['color']" type="text" class="form-control smallinput" />
+                              <input colorpicker="rgba" ng-model="mybutton['color']" type="text" class="form-control smallinput" />
                               <br />
                               <label class="software-label">Font Family</label>
-                              <input ng-model="styles.button.styles['font-family']" class="form-control software-dropdown" />
+                              <input ng-model="mybutton['font-family']" class="form-control software-dropdown" />
                               <br />
                               <label class="software-label">Font Size</label>
-                              <input ng-model="styles.button.styles['font-size']" type="text" class="form-control smallinput" />
+                              <input ng-model="mybutton['font-size']" type="text" class="form-control smallinput" />
                               <br />
                               <label class="software-label">Font Style</label>
-                              <select ng-model="styles.button.styles['font-style']" class="form-control software-dropdown">
+                              <select ng-model="mybutton['font-style']" class="form-control software-dropdown">
                                 <option>Normal</option>
                                 <option>Bold</option>
                                 <option>Italic</option>
                               </select>
                               <br />
                               <label class="software-label">Corners</label>
-                              <select ng-model="styles.button.styles['border-radius']" class="form-control software-dropdown">
+                              <select ng-model="mybutton['border-radius']" class="form-control software-dropdown">
                                 <option value="5px">5px</option>
                                 <option value="10px">10px</option>
                                 <option value="30px">30px</option>
@@ -1823,96 +1820,96 @@ line-height: 37px;
                         <div id="EcoverElement" class="panel-collapse collapse" role="tabpanel" aria-labelledby="EcoverElementTab">
                           <div class="panel-body">
                             <label class="software-label">Display Ecover</label>
-                            <select ng-model="styles.ecover['visible']" id="ecover-show-hide" class="form-control software-dropdown">
-                              <option value="show">Show</option>
-                              <option value="hide">Hide</option>
+                            <select ng-model="ecover['display']" id="ecover-show-hide" class="form-control software-dropdown">
+                              <option value="ecovershow">Show</option>
+                              <option value="ecoverhide">Hide</option>
                             </select>
                             <br />
                             <div class="ecover-show-hide-option ecovershow">
                               <label class="software-label">Element ID</label>
-                              <input ng-model="styles.ecover['id']" type="text" class="form-control inputelementid" />
+                              <input ng-model="ecover['id']" type="text" class="form-control inputelementid" />
                               <br />
                               <label class="software-label">Margin Top</label>
                               <div class="input-group martop">
                                 <div class="drag-slider"></div>
                                 <span class="input-group-addon nobg-input">
-                                  <input ng-model="styles.ecover.styles['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                  <input ng-model="ecover['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                 </span>
                               </div>
                               <label class="software-label">Padding Top</label>
                               <div class="input-group martop">
                                 <div class="drag-slider"></div>
                                 <span class="input-group-addon nobg-input">
-                                  <input ng-model="styles.ecover.styles['padding-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                  <input ng-model="ecover['padding-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                 </span>
                               </div>
                               <label class="software-label">Padding Left & Right</label>
                               <div class="input-group martop">
                                 <div class="drag-slider"></div>
                                 <span class="input-group-addon nobg-input">
-                                  <input ng-model="styles.ecover.styles['padding-left']" ng-model="styles.ecover.styles['padding-right']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                  <input ng-model="ecover['padding-left']" ng-model="ecover['padding-right']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                 </span>
                               </div>
                               <label class="software-label">Padding Bottom</label>
                               <div class="input-group martop">
                                 <div class="drag-slider"></div>
                                 <span class="input-group-addon nobg-input">
-                                  <input ng-model="styles.ecover.styles['padding-bottom']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                  <input ng-model="ecover['padding-bottom']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                 </span>
                               </div>
                               <h4 class="styles-title">Styles</h4>
                               <hr class="line-divider">
                                 <label class="software-label">Background Color</label>
-                                <input colorpicker="rgba" ng-model="styles.ecover.styles['background-color']" type="text" class="form-control smallinput" />
+                                <input colorpicker="rgba" ng-model="ecover['background-color']" type="text" class="form-control smallinput" />
                                 <br />
                                 <label class="software-label">Background Image</label>
                                 <div class="input-group">
-                                  <span ng-click="openImages(styles.ecover.styles, 'background-image')" class="input-group-addon icon-upload" id="sizing-addon2">
+                                  <span ng-click="openImages(ecover, 'background-image')" class="input-group-addon icon-upload" id="sizing-addon2">
                                     <i class="fa fa-plus" aria-hidden="true"></i>
                                   </span>
-                                  <input ng-model="styles.ecover.styles['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
+                                  <input ng-model="ecover['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
                                 </div>
                                 <br />
                                 <label class="software-label">Background Image Position</label>
-                                <select ng-model="styles.ecover.styles['background-position']" class="form-control software-dropdown">
+                                <select ng-model="ecover['background-position']" class="form-control software-dropdown">
                                   <option>Full Center Fit</option>
                                   <option>No Repeat</option>
                                   <option>Repeat</option>
                                 </select>
                                 <br />
                                 <label class="software-label">Ecover Width (eg. 300px)</label>
-                                <input ng-model="styles.ecover.styles['width']" type="text" class="form-control smallinput" />
+                                <input ng-model="ecover['width']" type="text" class="form-control smallinput" />
                                 <br />
                                 <label class="software-label">Ecover Height (eg. 400px)</label>
-                                <input ng-model="styles.ecover.styles['height']" type="text" class="form-control smallinput" />
+                                <input ng-model="ecover['height']" type="text" class="form-control smallinput" />
                                 <br />
                                 <h4 class="styles-title">Headline</h4>
                                 <hr class="line-divider">
                                   <label class="software-label">Headline Text</label>
-                                  <input ng-model="styles.ecover.headline['text']" type="text" class="form-control smallinput" />
+                                  <input ng-model="eheadline['text']" type="text" class="form-control smallinput" />
                                   <br />
                                   <label class="software-label">Font Family</label>
-                                  <input ng-model="styles.ecover.headline['font-family']" class="form-control software-dropdown" />
+                                  <input ng-model="eheadline['font-family']" class="form-control software-dropdown" />
                                   <br />
                                   <label class="software-label">Font Size</label>
                                   <div class="input-group martop">
                                     <div class="drag-slider"></div>
                                     <span class="input-group-addon nobg-input">
-                                      <input ng-model="styles.ecover.headline['font-size']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                      <input ng-model="eheadline['font-size']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                     </span>
                                   </div>
                                   <label class="software-label">Font Color</label>
-                                  <input colorpicker="rgba" ng-model="styles.ecover.headline['color']" type="text" class="form-control smallinput" />
+                                  <input colorpicker="rgba" ng-model="eheadline['color']" type="text" class="form-control smallinput" />
                                   <br />
                                   <label class="software-label">Font Styles</label>
-                                  <select ng-model="styles.ecover.headline['font-style']" class="form-control software-dropdown">
+                                  <select ng-model="eheadline['font-styles']" class="form-control software-dropdown">
                                     <option>Normal</option>
                                     <option>Bold</option>
                                     <option>Italic</option>
                                   </select>
                                   <br />
                                   <label class="software-label">Line Height</label>
-                                  <select ng-model="styles.ecover.headline['line-height']" class="form-control software-dropdown">
+                                  <select ng-model="eheadline['line-height']" class="form-control software-dropdown">
                                     <option value="">Auto</option>
                                     <option value="1em">1em</option>
                                     <option value="1.2em">1.2em</option>
@@ -1923,20 +1920,20 @@ line-height: 37px;
                                   <h4 class="styles-title">Author Name</h4>
                                   <hr class="line-divider">
                                     <label class="software-label">Text</label>
-                                    <input ng-model="styles.ecover.author['text']" type="text" class="form-control smallinput" />
+                                    <input ng-model="eauthor['text']" type="text" class="form-control smallinput" />
                                     <br />
                                     <label class="software-label">Font Size</label>
                                     <div class="input-group martop">
                                       <div class="drag-slider"></div>
                                       <span class="input-group-addon nobg-input">
-                                        <input ng-model="styles.ecover.author['font-size']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                        <input ng-model="eauthor['font-size']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                       </span>
                                     </div>
                                     <label class="software-label">Font Color</label>
-                                    <input colorpicker="rgba" ng-model="styles.ecover.author['color']" type="text" class="form-control smallinput" />
+                                    <input colorpicker="rgba" ng-model="eauthor['color']" type="text" class="form-control smallinput" />
                                     <br />
                                     <label class="software-label">Background Color</label>
-                                    <input colorpicker="rgba" ng-model="styles.ecover.author['background-color']"  type="text" class="form-control smallinput" />
+                                    <input colorpicker="rgba" ng-model="eauthor['background-color']" type="text" class="form-control smallinput" />
                                     <br />
                                   </div>
                                   <!-- ecover show hide option -->
@@ -1966,41 +1963,41 @@ line-height: 37px;
                               <div id="ExitPopSettings" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ExitPopSettingsTab">
                                 <div class="panel-body">
                                   <label class="software-label">Exit Pop On / Off</label>
-                                  <select ng-model="styles.exitpop.onoff" id="exitpop-on-off" class="form-control software-dropdown">
-                                    <option value="on">On</option>
-                                    <option value="off">Off</option>
+                                  <select id="exitpop-on-off" class="form-control software-dropdown">
+                                    <option value="exiton">On</option>
+                                    <option value="exitoff">Off</option>
                                   </select>
                                   <br />
                                   <div class="exitpop-on-off-option exiton">
-                                    <button ng-click="previewExitpop()" class="button-save" style="margin-top:5px;">Preview Exit Pop</button>
+                                    <button class="button-save" style="margin-top:5px;">Preview Exit Pop</button>
                                     <br />
                                     <br />
                                     <label class="software-label">Margin Top</label>
                                     <div class="input-group martop">
                                       <div class="drag-slider"></div>
                                       <span class="input-group-addon nobg-input">
-                                        <input ng-model="styles.exitpop.styles['margin-top']" type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
+                                        <input type="text" class="form-control smallinput" style="padding-left:3px;padding-right:3px;" />
                                       </span>
                                     </div>
                                     <label class="software-label">Choose Width</label>
-                                    <select ng-model="styles.exitpop.pageWidth" class="form-control software-dropdown">
+                                    <select class="form-control software-dropdown">
                                       <option>Wide</option>
                                       <option>Medium</option>
                                     </select>
                                     <br />
                                     <label class="software-label">Background Color</label>
-                                    <input ng-model="styles.exitpop.styles['background-color']" colorpicker="rgba" type="text" class="form-control smallinput" />
+                                    <input colorpicker="rgba" type="text" class="form-control smallinput" />
                                     <br />
                                     <label class="software-label">Background Image</label>
                                     <div class="input-group">
                                       <span class="input-group-addon icon-upload" id="sizing-addon2">
                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                       </span>
-                                      <input ng-model="styles.exitpop.styles['background-image']" type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
+                                      <input type="text" class="form-control small-icon-input" placeholder="http://" aria-describedby="sizing-addon2" />
                                     </div>
                                     <br />
                                     <label class="software-label">Background Image Position</label>
-                                    <select ng-model="styles.exitpop.styles['background-position']" class="form-control software-dropdown">
+                                    <select class="form-control software-dropdown">
                                       <option>Full Center Fit</option>
                                       <option>Repeat</option>
                                     </select>
@@ -2008,47 +2005,47 @@ line-height: 37px;
                                     <h4 class="styles-title">Styles</h4>
                                     <hr class="line-divider">
                                       <label class="software-label">Headline Text</label>
-                                      <button ng-click="open(styles.exitpop, 'text')" class="button-save" style="font-size:14px;" data-toggle="modal">Open TextEditor</button>
+                                      <button class="button-save" style="font-size:14px;" data-toggle="modal" data-target=".exitpop-headline-open-texteditor">Open TextEditor</button>
                                       <br />
                                       <br />
                                       <label class="software-label">Display Form</label>
-                                      <select ng-model="styles.exitpop.visible" class="form-control software-dropdown">
-                                        <option value="show">Show</option>
-                                        <option value="hide">Hide</option>
+                                      <select class="form-control software-dropdown">
+                                        <option>Show</option>
+                                        <option>Hide</option>
                                       </select>
                                       <br />
                                       <label class="software-label">Corners</label>
-                                      <select ng-model="styles.exitpop.styles['border-radius']" class="form-control software-dropdown">
-                                        <option value=''>None</option>
-                                        <option value='1px'>1px</option>
-                                        <option value='3px'>3px</option>
-                                        <option value='5px'>5px</option>
-                                        <option value='7px'>7px</option>
-                                        <option value='10px'>10px</option>
-                                        <option value='20px'>20px</option>
-                                        <option value='30px'>30px</option>
+                                      <select class="form-control software-dropdown">
+                                        <option>None</option>
+                                        <option>1px</option>
+                                        <option>3px</option>
+                                        <option>5px</option>
+                                        <option>7px</option>
+                                        <option>10px</option>
+                                        <option>20px</option>
+                                        <option>30px</option>
                                       </select>
                                       <br />
                                       <label class="software-label">Border Width</label>
-                                      <select ng-model="styles.exitpop.styles['border-width']" class="form-control software-dropdown">
-                                        <option value=''>None</option>
-                                        <option value='1px'>1px</option>
-                                        <option value='3px'>3px</option>
-                                        <option value='5px'>5px</option>
-                                        <option value='7px'>7px</option>
-                                        <option value='10px'>10px</option>
-                                        <option value='20px'>20px</option>
-                                        <option value='30px'>30px</option>
+                                      <select class="form-control software-dropdown">
+                                        <option>None</option>
+                                        <option>1px</option>
+                                        <option>3px</option>
+                                        <option>5px</option>
+                                        <option>7px</option>
+                                        <option>10px</option>
+                                        <option>20px</option>
+                                        <option>30px</option>
                                       </select>
                                       <br />
                                       <label class="software-label">Border Color</label>
-                                      <input ng-model="styles.exitpop.styles['border-color']" colorpicker="rgba" type="text" class="form-control smallinput" />
+                                      <input colorpicker="rgba" type="text" class="form-control smallinput" />
                                       <br />
                                       <label class="software-label">Border Style</label>
-                                      <select ng-model="styles.exitpop.styles['border-style']" class="form-control software-dropdown">
-                                        <option value='solid'>Solid</option>
-                                        <option value='dotted'>Dotted</option>
-                                        <option value='dashed'>Dashed</option>
+                                      <select class="form-control software-dropdown">
+                                        <option>Solid</option>
+                                        <option>Dashed</option>
+                                        <option>Dotted</option>
                                       </select>
                                       <br />
                                     </div>
@@ -2073,9 +2070,9 @@ line-height: 37px;
                                 <div id="ExitSplashSettings" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ExitSplashSettingsTab">
                                   <div class="panel-body">
                                     <label class="software-label">Exit Splash On / Off</label>
-                                    <select ng-model="styles.exitsplash.onoff" id="exitsplash-on-off" class="form-control software-dropdown">
-                                      <option value="on">On</option>
-                                      <option value="off">Off</option>
+                                    <select id="exitsplash-on-off" class="form-control software-dropdown">
+                                      <option value="exitsplashon">On</option>
+                                      <option value="exitsplashoff">Off</option>
                                     </select>
                                     <br />
                                     <div class="exitsplash-on-off-option exitsplashon">
@@ -2083,10 +2080,10 @@ line-height: 37px;
                                       <br />
                                       <br />
                                       <label class="software-label">Exit URL / Link</label>
-                                      <input ng-model="styles.exitsplash.link" type="text" class="form-control smallinput" />
+                                      <input type="text" class="form-control smallinput" />
                                       <br />
                                       <label class="software-label">Exit Splash Message</label>
-                                      <textarea ng-model="styles.exitsplash.message" class="form-control smalltextarea"></textarea>
+                                      <textarea class="form-control smalltextarea"></textarea>
                                       <br />
                                     </div>
                                     <!-- exitsplash on off option -->
@@ -2110,7 +2107,80 @@ line-height: 37px;
                             <div class="well">
                               <!-- <iframe ui-sref="template1" style="border:0px #FFFFFF none;" name="myiFrame" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" height="1000" width="100%"></iframe> -->
                               <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~TEMPLATE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                              <div ng-include="'modules/core/client/views/template.client.view.html'"></div>
+                              <div id="over" style="width:100%;height:5px; position:fixed;background:;top:0px; z-index:1000; cursor:none;"></div>
+                              <div id="abcdef" style="background-image: url(http://www.hd-wallpapersdownload.com/script/widescreen-wallpapers/desktop-earth-moving-wallpaper-dowload.jpg)">
+                                <div ng-attr-id="{{mycon.id}}" class="container" ng-style=myconStyle>
+                                  <div class="col-md-offset-2 container-style" ng-init="myconClass='col-md-8'" ng-class=myconClass>
+                                    <div ng-attr-id="{{myrow.id}}" ng-style=myrow class="col-md-12 row-style">
+                                      <h1 ng-init="myheadline.text='Lorem Ipsum is simply dummy text of the printing and typesetting industry.'" ng-bind-html="myheadline.text" style="text-align:center;">
+                                      </h1>
+                                      <div class="ecover-style" ng-style=ecover>
+                                        <p class="ecover-headline" ng-style=eheadline>{{eheadline.text}}</p>
+                                        <p class="ecover-authorname" ng-style=eauthor>{{eauthor.text}}</p>
+                                      </div>
+                                      <div ng-hide="isFormVisible=='true'" class="custom-form">
+                                        <h2 style="text-align:center;">Enter your name & email below</h2>
+                                        <br />
+                                        <input ng-style=inputTB type="text" class="form-control input-style" name="name" placeholder="{{firstTB.placeholder}}" required="" />
+                                        <br />
+                                        <input ng-style=inputTB type="text" class="form-control input-style" name="email" placeholder="{{secondTB.placeholder}}" style="margin-top:-10px;" />
+                                        <br />
+                                      </div>
+                                      <!-- custom form -->
+                                      <button class="button-style" ng-style=mybutton>{{mybutton.text}}</button>
+                                    </div>
+                                    <!-- row -->
+                                  </div>
+                                  <!-- col-md-10 -->
+                                  <div class="col-md-12" style="margin-top:-10px;margin-bottom:50px;">
+                                    <center>
+                                      <p style="color:#999;font-size:12px;">Copyright 2016 AllRights Reserved</p>
+                                      <p style="text-align:center; font-size:12px;color:#999;">
+                                        <a href="http://" style="color:#999;">Terms &amp; Disclaimer</a> | 
+
+                      
+                                        
+                                        <a href="http://" style="color:#999;">Privacy Policy</a> | 
+
+                      
+                                        
+                                        <a href="mailto:" style="color:#999;">Support</a> | 
+
+                    
+                                      
+                                      </p>
+                                      <p style="color:#999;font-size:12px;">This is a disclaimer text</p>
+                                    </center>
+                                  </div>
+                                  <!-- col-md-12 -->
+                                </div>
+                              <!-- container -->
+                              </div>
+                              <!-- Large modal -->
+                              <button type="button" class="btn btn-primary trigger-exitpop" data-toggle="modal" data-target=".exitpopup" style="display:none;"></button>
+                              <div class="modal fade exitpopup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                                <div class="modal-dialog modal-lg" role="document">
+                                  <div class="modal-content exitpop-modal">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size:30px;margin-top:-20px;margin-right:-15px;">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h1 style="text-align:center;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
+                                    <div class="custom-form exitpop-form">
+                                      <h2 style="text-align:center;">Enter your name & email below</h2>
+                                      <br />
+                                      <input type="text" class="form-control input-style" name="name" placeholder="Enter your name here" required="" />
+                                      <br />
+                                      <input type="text" class="form-control input-style" name="email" placeholder="Enter your email here" style="margin-top:-10px;" />
+                                      <br />
+                                    </div>
+                                    <!-- custom form -->
+                                    <button class="button-style exitpop-button">Free Instant Access</button>
+                                  </div>
+                                </div>
+                              </div>
+                              <!--
+                           <div class="add-element-dashed" style="margin-top:30px;"><button class="add-element-button" data-toggle="modal" data-target=".element-boxes">Add Element</button></div>
+                           -->
                             </div>
                             <!-- well -->
                           <!-- </div> -->
@@ -2147,7 +2217,7 @@ line-height: 37px;
                           <div class="row">
                             <div class="col-md-12 images-div-scroll" style="border:1px solid #eee;background:#f5f5f5;height:400px;padding:20px;overflow:scroll;"
                                 >
-                              <img ng-repeat="image in images" ng-click="onSelectImage(image)" src="{{image}}" width="150" class="images-inside" />
+                              <img ng-repeat="image in images" ng-click="onSelectImage(image)" src="http://{{image}}" width="150" class="images-inside" />
                             </div>
                           </div>
                           <!-- row -->
@@ -2179,7 +2249,7 @@ line-height: 37px;
                     </div>
                   </div>
                   <!-- Headline Editor Start -->
-                  <div id="myTextEditor" class="modal fade headline-open-texteditor" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="overflow-y: scroll !important;">
+                  <div class="modal fade headline-open-texteditor" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" style="overflow-y: scroll !important;">
                     <div class="modal-dialog modal-lg" role="document">
                       <div class="modal-content">
                         <div class="modal-header" style="background:#222528;border-top-left-radius:5px;border-top-right-radius:5px;padding-left:30px;">
@@ -2187,7 +2257,7 @@ line-height: 37px;
                             <span aria-hidden="true">&times;</span>
                           </button>
                           <h4 class="modal-title gotham-font" id="myModalLabel" style="color:white;">
-                            <i class="fa fa-font" aria-hidden="true"></i> Text
+                            <i class="fa fa-font" aria-hidden="true"></i> Headline Text
                                                                                                                                             
                                                                                         
                                         
@@ -2196,7 +2266,7 @@ line-height: 37px;
                           </h4>
                         </div>
                         <div class="modal-header" style="background:#eee;border-top-left-radius:5px;border-top-right-radius:5px;padding-left:30px;margin-bottom:10px;">
-                          <h4 class="modal-title gotham-font" id="myModalLabel" style="color:black;">Edit Your Text Below</h4>
+                          <h4 class="modal-title gotham-font" id="myModalLabel" style="color:black;">Edit Your Headline / Text Below</h4>
                         </div>
                         <div class="modal-body" style="padding-left:40px;padding-right:40px;padding-bottom:30px;padding-top:15px;">
                           <div class="row">

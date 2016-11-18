@@ -74,7 +74,7 @@ exports.images = function (req, res) {
 
   fs.readdir('public/'+req.user.subdomain, function(err, items) {
     var itemsUrl = items.map(function(item) {
-      return 'localhost:3000/'+req.user.subdomain+'/'+item;
+      return '/'+req.user.subdomain+'/'+item;
     });
     res.json(itemsUrl);
   });
