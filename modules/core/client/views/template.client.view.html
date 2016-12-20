@@ -1,6 +1,6 @@
 <section id="abcdef">
     <div id="over" style="width:100%;height:5px; position:fixed;background:;top:0px; z-index:1000; cursor:none;"></div>
-    <div class="background" ng-style=styles.background>
+    <div class="background" ng-style=styles.background ng-class="styles.background['background-position']" >
     <script type="text/javascript">
   
 
@@ -25,6 +25,34 @@ background-position: center;
 
 
 }*/
+.normal {
+  font-style: normal;
+  font-weight: normal;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.fullcenterfit {
+  background-position: center;
+}
+
+.full100width {
+  background-size: cover;
+}
+
+.norepeat {
+  background-repeat: no-repeat;
+}
+
+.repeat {
+  bakground-repeat: repeat;
+}
 
 .container-style{
 
@@ -331,23 +359,23 @@ width: 100%;
 
 </style>
       <div class="container">
-        <div ng-attr-id="{{styles.container.id}}" ng-style=styles.container class="col-md-8 col-md-offset-2 container-style">
-          <div ng-attr-id="{{styles.row.id}}" ng-style=styles.row class="col-md-12 row-style">
+        <div ng-attr-id="{{styles.container.id}}" ng-class="styles.container['background-position']" ng-style=styles.container class="col-md-8 col-md-offset-2 container-style">
+          <div ng-attr-id="{{styles.row.id}}" ng-class="styles.row['background-position']" ng-style=styles.row class="col-md-12 row-style">
             <h1 ng-attr-id="{{styles.headline.id}}" ng-bind-html="styles.headline.text" style="text-align:center;"></h1>
-            <div ng-hide="styles.ecover.visible == 'hide'" ng-attr-id="{{styles.ecover.id}}" ng-style=styles.ecover.styles class="ecover-style">
-              <p ng-style=styles.ecover.headline ng-bind-html="styles.ecover.headline.text" class="ecover-headline"></p>
+            <div ng-hide="styles.ecover.visible == 'hide'" ng-attr-id="{{styles.ecover.id}}" ng-style=styles.ecover.styles class="ecover-style" ng-class="styles.row['background-position']" >
+              <p ng-style=styles.ecover.headline ng-class="styles.ecover.headline['font-style']" ng-bind-html="styles.ecover.headline.text" class="ecover-headline"></p>
               <p ng-style=styles.ecover.author class="ecover-authorname">{{styles.ecover.author.text}}</p>
             </div>
             <div ng-hide="styles.inputTF.visible == 'hide'" ng-attr-id="{{styles.inputTF.id}}" ng-style=styles.inputTF.customform class="custom-form">
               <h2 ng-bind-html="styles.inputTF.text" style="text-align:center;"></h2>
               <br />
-              <input ng-style=styles.inputTF.styles type="text" class="form-control input-style" name="name" placeholder="{{styles.inputTF.firstTB.placeholder}}" required="" />
+              <input id="myname" ng-style=styles.inputTF.styles ng-class="styles.inputTF.styles['font-style']" type="text" class="form-control input-style" name="name" placeholder="{{styles.inputTF.firstTB.placeholder}}" required="" />
               <br />
-              <input ng-style=styles.inputTF.styles type="text" class="form-control input-style" name="email" placeholder="{{styles.inputTF.secondTB.placeholder}}" style="margin-top:-10px;" />
+              <input id="myemail" ng-style=styles.inputTF.styles ng-class="styles.inputTF.styles['font-style']" type="text" class="form-control input-style" name="email" placeholder="{{styles.inputTF.secondTB.placeholder}}" style="margin-top:-10px;" />
               <br />
             </div>
             <!-- custom form -->
-            <button ng-hide="styles.button.visible == 'hide'" ng-attr-id="{{styles.button.id}}" ng-style=styles.button.styles ng-bind-html="styles.button.text" class="button-style"></button>
+            <button onclick="submitform()" ng-hide="styles.button.visible == 'hide'" ng-attr-id="{{styles.button.id}}" ng-style=styles.button.styles ng-bind-html="styles.button.text" ng-class="styles.button.styles['font-style']" class="button-style"></button>
           </div>
           <!-- row -->
         </div>
@@ -379,7 +407,7 @@ width: 100%;
       <button type="button" class="btn btn-primary trigger-exitpop" data-toggle="modal" data-target=".exitpopup" style="display:none;"></button>
       <div class="modal fade exitpopup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
         <div class="modal-dialog modal-lg" role="document">
-          <div ng-style="styles.exitpop.styles" class="modal-content exitpop-modal">
+          <div ng-style="styles.exitpop.styles" ng-class="styles.row['background-position']" class="modal-content exitpop-modal">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size:30px;margin-top:-20px;margin-right:-15px;">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -398,4 +426,19 @@ width: 100%;
         </div>
       </div>
     </div>
+
+    <script>
+    function submitform() {
+      console.log('submit');
+
+      var f = $("#frame").contents();
+      f.find("form > input[name*='name']").val( $("#myname").val() );
+      f.find("form > input[name*='email']").val( $("#myemail").val() )
+      f.find("form").submit();
+
+
+    }
+    </script>
+
+
 </section>

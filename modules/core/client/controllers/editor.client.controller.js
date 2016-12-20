@@ -11,12 +11,29 @@ var debug;
     vm.authentication = Authentication;
     debug = $scope;
 
+    $scope.slider = {
+      options: {
+        floor: 0,
+        ceil: 200,
+        translate: function(value) {
+          return value + 'px';
+        },
+        hidePointerLabels: true,
+        hideLimitLabels: true,
+      }
+    };
+
     $scope.selectedImg = "";
 
-    $http.get('/images', {}).then(function(res){
-    	$scope.images = res.data;
-    	console.log("images: ", res);
-    });
+    $scope.getImages = function() {
+
+      $http.get('/images', {}).then(function(res){
+        $scope.images = res.data;
+        console.log("images: ", res);
+      });
+    }
+
+    $scope.getImages();
 
     // $(".summernote").summernote();
     var tmpTxt = {va: '', key: ''};
@@ -70,8 +87,25 @@ var debug;
 
     $scope.read();
 
+    $scope.loadingtime = 500;
+    $scope.preview = function(href) {
+      $scope.update();
+      console.log('href ', href)
+
+      setTimeout(function() {
+        window.open(href, '_blank');
+      }, $scope.loadingtime)
 
 
+        $("#loading2").show();
+        setTimeout(function() {
+          $("#loading2").hide();
+        }, $scope.loadingtime)
+      
+    }
+
+    $("#loading").hide();
+    $("#loading2").hide();
     $scope.update = function() {
         var html = $("#abcdef").html();
         var config = JSON.stringify({ settings: $scope.settings, styles: $scope.styles });
@@ -79,6 +113,12 @@ var debug;
             console.log('res: ', res);
             $scope.page = res.data;
         });
+
+
+        $("#loading").show();
+        setTimeout(function() {
+          $("#loading").hide();
+        }, $scope.loadingtime)
     }
 
 
@@ -108,9 +148,29 @@ var debug;
         privacyPolicyText: ''
       },
       emailSettings: {
-        email: '',
-        redirectUrl: ''
+        email: '<form action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post"><!-- Name -->name: <input type="text" name="name"/><br/><!-- Email field (required) -->      email: <input type="text" name="email"/><br/>      <!-- Campaign token -->      <!-- Get the token at: https://app.getresponse.com/campaign_list.html -->      <input type="hidden" name="campaign_token" value="noIrT" />      <!-- Thank you page (optional) -->      <input type="hidden" name="thankyou_url" value="http://google.com"/>      <!-- Forward form data to your page (optional) -->      <input type="hidden" name="forward_data" value="" />      <!-- Subscriber button -->      <input type="submit" value="click here"/>    </form>',
+        redirectUrl: 'https://www.google.com'
       }
+    }
+
+    $scope.$watch('styles.container["padding-left"]', function(v){
+      $scope.styles.container['padding-right'] = v;
+    });
+
+    $scope.$watch('styles.row["padding-left"]', function(v){
+      $scope.styles.row['padding-right'] = v;
+    });
+
+    $scope.$watch('styles.ecover.styles["padding-left"]', function(v){
+      $scope.styles.ecover.styles ['padding-right'] = v;
+    });
+
+
+    $scope.background = {
+      options: [{ value: 'fullcenterfit', text: 'Full Center Fit' }, 
+      { value: 'full100width', text: 'Full 100% Width' }, 
+      { value: 'norepeat', text: 'No Repeat' }, 
+      { value: 'repeat', text: 'Repeat' }]
     }
 
 
@@ -118,7 +178,7 @@ var debug;
       background: {
         'background-color': '#000000',
         'background-image': 'url(http://www.hd-wallpapersdownload.com/script/widescreen-wallpapers/desktop-earth-moving-wallpaper-dowload.jpg)',
-        'background-position': 'center'
+        'background-position': 'fullcenterfit'
       },
       container: {
         id: 'container',
@@ -130,7 +190,7 @@ var debug;
         'padding-bottom': '70px',
         'background-color': '',
         'background-image': '',
-        'background-position': '',
+        'background-position': 'fullcenterfit',
         'border-radius': '5px',
         'border-width': '3px',
         'border-style': 'solid',
@@ -145,7 +205,7 @@ var debug;
         'padding-bottom': '10px',
         'background-color': '',
         'background-image': '',
-        'background-position': '',
+        'background-position': 'fullcenterfit',
       },
       headline: {
         id: 'headline',
@@ -154,32 +214,32 @@ var debug;
       },
       inputTF: {
         visible: 'show',
-        id: 'iput',
+        id: 'myform',
         text: 'Enter your name & email below',
         'customform': {
           'margin-top': '20px',
         },
         firstTB: {
-          type: '',
+          type: 'name',
           placeholder: 'Enter your name here',
-          required: ''
+          required: 'true'
         },
         secondTB: {
-          type: '',
+          type: 'email',
           placeholder: 'Enter your email here',
-          required: ''
+          required: 'true'
         },
         styles: {
           width: '500px',
           height: '50px',
           'background-color': '#ffffff',
           'font-family': '',
-          'font-size': '',
-          'font-style': '',
+          'font-size': '16',
+          'font-style': 'normal',
           'text-align': 'left',
           'border-radius': '5px',
           'border': '',
-          'border-width': '1px',
+          'border-width': '3px',
           'border-color': '#dddddd'
         },
       },
@@ -196,7 +256,7 @@ var debug;
           'background-color': '#4CAF50',
           'color': '#ffffff',
           'font-family': 'Roboto, sans-serif',
-          'font-size': '20px',
+          'font-size': '20',
           'font-style': 'normal',
           'border-radius': '5px',
         },
@@ -212,7 +272,7 @@ var debug;
           'padding-bottom': '40px',
           'background-color': '#000000',
           'background-image': 'url(http://hdfreewallpaper.net/wp-content/uploads/2015/10/hd-wall-paper-earth-free-hd-wallpapers-for-desktop.jpg)',
-          'background-position': 'center',
+          'background-position': 'fullcenterfit',
           'width': '280px',
           'height': '350px'
         },
@@ -221,7 +281,7 @@ var debug;
           'font-family': '',
           'font-size': '30px',
           'color': '#ffffff',
-          'font-style': '',
+          'font-style': 'normal',
           'line-height': '1.2em',
         },
         author: {
@@ -239,7 +299,7 @@ var debug;
           'margin-top': '10px',
           'background-color': '#ffffff',
           'background-image': 'url()',
-          'background-position': '',
+          'background-position': 'fullcenterfit',
           visible: '',
           'border-radius': '2px',
           'border-width': '5px',
@@ -257,5 +317,91 @@ var debug;
     $scope.previewExitpop = function() {
       $(".trigger-exitpop").click();
     }
+
+
+
+  $( function() {
+    $( ".drag-slider" ).slider();
+  } );
+
+
+         
+   $(".main-navigator").click(function() {
+     $(".main-navigator").removeClass("editor-nav-active");
+     $(this).addClass("editor-nav-active");
+    });
+   
+   
+   $('#menu-toggle').click(function(){
+   
+   
+     $('.left-bar').toggle(500);
+     
+     $('#menu-toggle').hide();
+   
+   
+   
+   });
+           
+   
+   $('#click-expand').click(function(){
+
+     $('#menu-toggle').click();
+     
+     $('#menu-toggle').show();
+   
+   
+   });
+
+
+$('.button-go-back').click(function(){
+
+  $('.flow1').toggle();
+
+  $('.flow2').toggle();
+
+  $('.button-go-back').hide();
+
+});
+
+
+
+
+
+$('.select-offer-link').click(function(){
+
+  $('.flow1').toggle();
+
+  $('.flow2').toggle();
+
+
+
+  $('.button-go-back').show();
+
+});
+
+
+$('.connectsubmit').click(function(){
+
+  $('.loader').fadeIn();
+
+  setTimeout(function(){
+
+    $('.close').click();
+
+    $('.loader').hide();
+
+    $('.flow2').toggle();
+
+    $('.flow1').toggle();
+
+    $('.button-go-back').hide();
+
+    }, 3000);
+
+
+  });
+
+
   }
 }());

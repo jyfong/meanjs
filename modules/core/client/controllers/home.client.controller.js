@@ -24,7 +24,7 @@ var debug;
     	console.log('open')
     }
 
-    $scope.campaign = { name: null, type: null };
+    $scope.campaign = { name: null, type: null, squeeze: { name: 'Squeeze Page', path: 'sample-page' } };
 
     $scope.createCampaign = function(campaign) {
       console.log('campaign: ', campaign);

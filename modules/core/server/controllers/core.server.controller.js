@@ -93,42 +93,6 @@ exports.upload = function (req, res, next) {
   res.json({success: true});
 }
 
-exports.save = function (req, res) {
-
-
-
-  fs.readFile("modules/core/server/views/template1.html", 'utf8', function(err, data) {
-
-    var fs = require('fs');
-    fs.writeFile("public/abc/template.html", data+req.body.html+"</body></html>", function(err) {
-        if(err) {
-            return console.log(err);
-        }
-
-        console.log("The file was saved!");
-    }); 
-    
-    
-  });
-
-
-
-
-  var page = new Page(req.body);
-
-  // Then save the user
-  page.save(function (err) {
-    if (err) {
-      console.log('err: ', err);
-      return res.status(400).send({
-        message: err
-      });
-    } else {
-      res.send('')
-    }
-  });
-
-}
 
 
 

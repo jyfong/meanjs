@@ -18,7 +18,8 @@
     "ng-flow": "~2",
     "angular-color-picker": "angularjs-color-picker#^2.5.0",
     "angular-bootstrap-colorpicker": "^3.0.25",
-    "jquery-ui": "^1.12.1"
+    "jquery-ui": "^1.12.1",
+    "angularjs-slider": "^5.8.7"
   },
   "overrides": {
     "bootstrap": {

@@ -316,7 +316,7 @@ width: 100%;
 </style>
 <body>
     <div id="over" style="width:100%;height:5px; position:fixed;background:;top:0px; z-index:1000; cursor:none;"></div>
-    <div class="background" ng-style="styles.background" style="background-color: rgb(0, 0, 0); background-image: url(&quot;http://localhost:3000/abc/29697986486_2387baeb7e_k.jpg&quot;); background-position: center center;">
+    <div class="background" ng-style="styles.background" style="background-color: rgb(0, 0, 0); background-image: url(&quot;/abc/29697986486_2387baeb7e_k.jpg&quot;); background-position: center center;">
     <script type="text/javascript">
   
 
@@ -635,12 +635,13 @@ width: 100%;
 
 
 
-.background{
+#myform{
+color: magenta;
+}
 
-background-attachment:fixed; 
-background-position: center;
-
-
+#headline{
+font-size: 30pt;
+color: cyan;
 }
 
 
@@ -653,23 +654,23 @@ background-position: center;
 
 </style>
       <div class="container">
-        <div ng-attr-id="{{styles.container.id}}" ng-style="styles.container" class="col-md-8 col-md-offset-2 container-style" id="container" style="margin-top: 70px; padding: 30px 0px 70px; border-radius: 5px; border-width: 3px; border-style: solid; border-color: rgb(34, 34, 34);">
+        <div ng-attr-id="{{styles.container.id}}" ng-style="styles.container" class="col-md-8 col-md-offset-2 container-style" id="container" style="margin-top: 70px; padding: 30px 0px 70px; background-image: url(&quot;/abc/nur8hOKKnl0YED0bhmLcNLSSZXGe-pnf7ClRFheKcgU.jpg&quot;); border-radius: 5px; border-width: 3px; border-style: solid; border-color: rgb(34, 34, 34);">
           <div ng-attr-id="{{styles.row.id}}" ng-style="styles.row" class="col-md-12 row-style" id="row" style="margin-top: 0px; padding: 10px 40px;">
-            <h1 ng-attr-id="{{styles.headline.id}}" ng-bind-html="styles.headline.text" style="text-align:center;" class="ng-binding" id="headline">Lorem Ipsum is simply dummyabcdef text of the printing and typesetting industry.</h1>
-            <div ng-hide="styles.ecover.visible == 'hide'" ng-attr-id="{{styles.ecover.id}}" ng-style="styles.ecover.styles" class="ecover-style" id="ecover" style="margin-top: 30px; padding: 30px 20px 40px; background-color: rgb(0, 0, 0); background-image: url(&quot;http://hdfreewallpaper.net/wp-content/uploads/2015/10/hd-wall-paper-earth-free-hd-wallpapers-for-desktop.jpg&quot;); background-position: center center; width: 280px; height: 350px;">
-              <p ng-style="styles.ecover.headline" ng-bind-html="styles.ecover.headline.text" class="ecover-headline ng-binding" style="font-size: 30px; color: rgb(255, 255, 255); line-height: 1.2em;">Journey To The Center Of The Earth</p>
-              <p ng-style="styles.ecover.author" class="ecover-authorname ng-binding" style="font-size: 16px; color: rgb(255, 255, 255); background-color: rgb(255, 179, 0);">Author Name</p>
+            <h1 ng-attr-id="{{styles.headline.id}}" ng-bind-html="styles.headline.text" style="text-align:center;" class="ng-binding" id="headline"><p><b>SpaceX just launch 4,425 satellites</b>&nbsp;</p><p>more than currently orbit Earth</p><p><br></p></h1>
+            <div ng-hide="styles.ecover.visible == 'hide'" ng-attr-id="{{styles.ecover.id}}" ng-style="styles.ecover.styles" class="ecover-style" id="ecover" style="margin-top: 30px; padding: 30px 20px 40px; background-color: rgb(0, 0, 0); background-image: url(&quot;/abc/Mountain_in_Wadi_Rum,_Jordan.jpg&quot;); background-position: center center; width: 280px; height: 350px;">
+              <p ng-style="styles.ecover.headline" ng-bind-html="styles.ecover.headline.text" class="ecover-headline ng-binding" style="font-size: 30px; color: rgb(222, 146, 146); line-height: 1.2em;">Journey To The Center Of The Mars</p>
+              <p ng-style="styles.ecover.author" class="ecover-authorname ng-binding" style="font-size: 16px; color: rgb(153, 50, 50); background-color: rgb(255, 166, 138);">Elon Musk</p>
             </div>
-            <div ng-hide="styles.inputTF.visible == 'hide'" ng-attr-id="{{styles.inputTF.id}}" ng-style="styles.inputTF.customform" class="custom-form" id="iput" style="margin-top: 20px;">
-              <h2 ng-bind-html="styles.inputTF.text" style="text-align:center;" class="ng-binding">Enter your name &amp; email below</h2>
+            <div ng-hide="styles.inputTF.visible == 'hide'" ng-attr-id="{{styles.inputTF.id}}" ng-style="styles.inputTF.customform" class="custom-form" id="myform" style="margin-top: 20px;">
+              <h2 ng-bind-html="styles.inputTF.text" style="text-align:center;" class="ng-binding">Be determined to become the next Elon Musk</h2>
               <br>
-              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="name" placeholder="Enter your name here" required="" style="width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
+              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="name" placeholder="Enter your name here" required="" style="width: 500px; height: 50px; background-color: transparent; text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
               <br>
-              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="email" placeholder="Enter your email here" style="margin-top: -10px; width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
+              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="email" placeholder="Enter your email here" style="margin-top: -10px; width: 500px; height: 50px; background-color: transparent; text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
               <br>
             </div>
             <!-- custom form -->
-            <button ng-hide="styles.button.visible == 'hide'" ng-attr-id="{{styles.button.id}}" ng-style="styles.button.styles" ng-bind-html="styles.button.text" class="button-style ng-binding" id="button" style="margin-top: -10px; width: 400px; height: 55px; background-color: rgb(76, 175, 80); color: rgb(255, 255, 255); font-family: Roboto, sans-serif; font-size: 20px; font-style: normal; border-radius: 5px;">Free Instant Access</button>
+            <button ng-hide="styles.button.visible == 'hide'" ng-attr-id="{{styles.button.id}}" ng-style="styles.button.styles" ng-bind-html="styles.button.text" class="button-style ng-binding" id="button" style="margin-top: -10px; width: 400px; height: 55px; background-color: rgb(255, 151, 56); color: rgb(255, 255, 255); font-size: 20px; font-style: italic; border-radius: 5px;">ELON MUSK</button>
           </div>
           <!-- row -->
         </div>
@@ -705,17 +706,17 @@ background-position: center;
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size:30px;margin-top:-20px;margin-right:-15px;">
               <span aria-hidden="true">×</span>
             </button>
-            <h1 style="text-align:center;" class="ng-binding">Lorem Ipsum is simply dummyabcdef text of the printing and typesetting industry.</h1>
+            <h1 style="text-align:center;" class="ng-binding">&lt;p&gt;&lt;b&gt;SpaceX just launch 4,425 satellites&lt;/b&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;more than currently orbit Earth&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</h1>
             <div class="custom-form exitpop-form">
-              <h2 style="text-align:center;" class="ng-binding">Enter your name &amp; email below</h2>
+              <h2 style="text-align:center;" class="ng-binding">Be determined to become the next Elon Musk</h2>
               <br>
-              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="name" placeholder="Enter your name here" required="" style="width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
+              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="name" placeholder="Enter your name here" required="" style="width: 500px; height: 50px; background-color: transparent; text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
               <br>
-              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="email" placeholder="Enter your email here" style="margin-top: -10px; width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
+              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="email" placeholder="Enter your email here" style="margin-top: -10px; width: 500px; height: 50px; background-color: transparent; text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
               <br>
             </div>
             <!-- custom form -->
-            <button ng-style="styles.button.styles" class="button-style exitpop-button ng-binding" style="margin-top: -10px; width: 400px; height: 55px; background-color: rgb(76, 175, 80); color: rgb(255, 255, 255); font-family: Roboto, sans-serif; font-size: 20px; font-style: normal; border-radius: 5px;">Free Instant Access</button>
+            <button ng-style="styles.button.styles" class="button-style exitpop-button ng-binding" style="margin-top: -10px; width: 400px; height: 55px; background-color: rgb(255, 151, 56); color: rgb(255, 255, 255); font-size: 20px; font-style: italic; border-radius: 5px;">ELON MUSK</button>
           </div>
         </div>
       </div>

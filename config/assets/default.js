@@ -1,7 +1,6 @@
 'use strict';
 
 /* eslint comma-dangle:[0, "only-multiline"] */
-
 module.exports = {
   client: {
     lib: {
@@ -13,7 +12,8 @@ module.exports = {
         'public/lib/summernote/dist/summernote.css',
         'public/lib/angular-color-picker/dist/angularjs-color-picker.css',
         'public/lib/angular-color-picker/dist/themes/angularjs-color-picker-bootstrap.css',
-        'public/lib/angular-bootstrap-colorpicker/css/colorpicker.css'
+        'public/lib/angular-bootstrap-colorpicker/css/colorpicker.css',
+        'public/lib/angularjs-slider/dist/rzslider.css'
         // endbower
       ],
       js: [
@@ -39,6 +39,7 @@ module.exports = {
         'public/lib/angular-color-picker/dist/angularjs-color-picker.js',
         'public/lib/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js',
         'public/lib/jquery-ui/jquery-ui.js',
+        'public/lib/angularjs-slider/dist/rzslider.js'
 
 
         // endbower

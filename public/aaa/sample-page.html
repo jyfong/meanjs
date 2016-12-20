@@ -6,15 +6,12 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
-    <title></title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
-    </head>
-<body>
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" /><title></title><meta name="description" content=""><meta name="keywords" content=""><link rel="icon" href=""></head><body>
     <div id="over" style="width:100%;height:5px; position:fixed;background:;top:0px; z-index:1000; cursor:none;"></div>
-    <div class="background" ng-style="styles.background" style="background-color: rgb(0, 0, 0); background-image: url(&quot;http://www.hd-wallpapersdownload.com/script/widescreen-wallpapers/desktop-earth-moving-wallpaper-dowload.jpg&quot;); background-position: center center;">
+    <div class="background fullcenterfit" ng-style="styles.background" ng-class="styles.background['background-position']" style="background-color: rgb(0, 0, 0); background-image: url(&quot;http://www.hd-wallpapersdownload.com/script/widescreen-wallpapers/desktop-earth-moving-wallpaper-dowload.jpg&quot;);">
     <script type="text/javascript">
   
 
@@ -39,6 +36,34 @@ background-position: center;
 
 
 }*/
+.normal {
+  font-style: normal;
+  font-weight: normal;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.fullcenterfit {
+  background-position: center;
+}
+
+.full100width {
+  background-size: cover;
+}
+
+.norepeat {
+  background-repeat: no-repeat;
+}
+
+.repeat {
+  bakground-repeat: repeat;
+}
 
 .container-style{
 
@@ -345,23 +370,23 @@ width: 100%;
 
 </style>
       <div class="container">
-        <div ng-attr-id="{{styles.container.id}}" ng-style="styles.container" class="col-md-8 col-md-offset-2 container-style" id="container" style="padding-right: 0px; border-radius: 5px; border-width: 3px; border-style: solid; border-color: rgb(34, 34, 34);">
-          <div ng-attr-id="{{styles.row.id}}" ng-style="styles.row" class="col-md-12 row-style" id="row" style="padding-right: 40px;">
+        <div ng-attr-id="{{styles.container.id}}" ng-class="styles.container['background-position']" ng-style="styles.container" class="col-md-8 col-md-offset-2 container-style fullcenterfit" id="container" style="margin-top: 0px; padding: 0px; border-radius: 5px; border-width: 3px; border-style: solid; border-color: rgb(34, 34, 34);">
+          <div ng-attr-id="{{styles.row.id}}" ng-class="styles.row['background-position']" ng-style="styles.row" class="col-md-12 row-style fullcenterfit" id="row" style="margin-top: 0px; padding: 0px;">
             <h1 ng-attr-id="{{styles.headline.id}}" ng-bind-html="styles.headline.text" style="text-align:center;" class="ng-binding" id="headline">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
-            <div ng-hide="styles.ecover.visible == 'hide'" ng-attr-id="{{styles.ecover.id}}" ng-style="styles.ecover.styles" class="ecover-style" id="ecover" style="padding-right: 20px; background-color: rgb(0, 0, 0); background-image: url(&quot;http://hdfreewallpaper.net/wp-content/uploads/2015/10/hd-wall-paper-earth-free-hd-wallpapers-for-desktop.jpg&quot;); background-position: center center; width: 280px; height: 350px;">
-              <p ng-style="styles.ecover.headline" ng-bind-html="styles.ecover.headline.text" class="ecover-headline ng-binding" style="color: rgb(255, 255, 255); line-height: 1.2em;">Journey To The Center Of The Earth</p>
-              <p ng-style="styles.ecover.author" class="ecover-authorname ng-binding" style="color: rgb(255, 255, 255); background-color: rgb(255, 179, 0);">Author Name</p>
+            <div ng-hide="styles.ecover.visible == 'hide'" ng-attr-id="{{styles.ecover.id}}" ng-style="styles.ecover.styles" class="ecover-style fullcenterfit" ng-class="styles.row['background-position']" id="ecover" style="margin-top: 0px; padding: 0px; background-color: rgb(0, 0, 0); background-image: url(&quot;http://hdfreewallpaper.net/wp-content/uploads/2015/10/hd-wall-paper-earth-free-hd-wallpapers-for-desktop.jpg&quot;); width: 280px; height: 350px;">
+              <p ng-style="styles.ecover.headline" ng-class="styles.ecover.headline['font-style']" ng-bind-html="styles.ecover.headline.text" class="ecover-headline ng-binding normal" style="font-size: 0px; color: rgb(255, 255, 255); font-style: normal; line-height: 1.2em;">Journey To The Center Of The Earth</p>
+              <p ng-style="styles.ecover.author" class="ecover-authorname ng-binding" style="font-size: 0px; color: rgb(255, 255, 255); background-color: rgb(255, 179, 0);">Author Name</p>
             </div>
-            <div ng-hide="styles.inputTF.visible == 'hide'" ng-attr-id="{{styles.inputTF.id}}" ng-style="styles.inputTF.customform" class="custom-form" id="myform" style="margin-top: 20px;">
+            <div ng-hide="styles.inputTF.visible == 'hide'" ng-attr-id="{{styles.inputTF.id}}" ng-style="styles.inputTF.customform" class="custom-form ng-hide" id="myform" style="margin-top: 20px;">
               <h2 ng-bind-html="styles.inputTF.text" style="text-align:center;" class="ng-binding">Enter your name &amp; email below</h2>
               <br>
-              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="name" placeholder="Enter your name here" required="" style="width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
+              <input id="myname" ng-style="styles.inputTF.styles" ng-class="styles.inputTF.styles['font-style']" type="text" class="form-control input-style normal" name="name" placeholder="Enter your name here" required="" style="width: 500px; height: 50px; background-color: rgb(255, 255, 255); font-size: 16px; font-style: normal; text-align: left; border-radius: 5px; border-width: 3px; border-color: rgb(221, 221, 221);">
               <br>
-              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="email" placeholder="Enter your email here" style="margin-top: -10px; width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
+              <input id="myemail" ng-style="styles.inputTF.styles" ng-class="styles.inputTF.styles['font-style']" type="text" class="form-control input-style normal" name="email" placeholder="Enter your email here" style="margin-top: -10px; width: 500px; height: 50px; background-color: rgb(255, 255, 255); font-size: 16px; font-style: normal; text-align: left; border-radius: 5px; border-width: 3px; border-color: rgb(221, 221, 221);">
               <br>
             </div>
             <!-- custom form -->
-            <button ng-hide="styles.button.visible == 'hide'" ng-attr-id="{{styles.button.id}}" ng-style="styles.button.styles" ng-bind-html="styles.button.text" class="button-style ng-binding" id="button" style="width: 400px; height: 55px; background-color: rgb(76, 175, 80); color: rgb(255, 255, 255); font-family: Roboto, sans-serif; font-size: 20px; font-style: normal; border-radius: 5px;">Free Instant Access</button>
+            <button onclick="submitform()" ng-hide="styles.button.visible == 'hide'" ng-attr-id="{{styles.button.id}}" ng-style="styles.button.styles" ng-bind-html="styles.button.text" ng-class="styles.button.styles['font-style']" class="button-style ng-binding normal" id="button" style="margin-top: 0px; width: 400px; height: 55px; background-color: rgb(76, 175, 80); color: rgb(255, 255, 255); font-family: Roboto, sans-serif; font-size: 20px; font-style: normal; border-radius: 5px;">Free Instant Access</button>
           </div>
           <!-- row -->
         </div>
@@ -393,7 +418,7 @@ width: 100%;
       <button type="button" class="btn btn-primary trigger-exitpop" data-toggle="modal" data-target=".exitpopup" style="display:none;"></button>
       <div class="modal fade exitpopup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
         <div class="modal-dialog modal-lg" role="document">
-          <div ng-style="styles.exitpop.styles" class="modal-content exitpop-modal" style="background-color: rgb(255, 255, 255); background-image: url(&quot;&quot;); border-radius: 2px; border-width: 5px; border-color: rgb(204, 204, 204); border-style: solid;">
+          <div ng-style="styles.exitpop.styles" ng-class="styles.row['background-position']" class="modal-content exitpop-modal fullcenterfit" style="margin-top: 0px; background-color: rgb(255, 255, 255); background-image: url(&quot;&quot;); border-radius: 2px; border-width: 5px; border-color: rgb(204, 204, 204); border-style: solid;">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size:30px;margin-top:-20px;margin-right:-15px;">
               <span aria-hidden="true">×</span>
             </button>
@@ -401,15 +426,30 @@ width: 100%;
             <div class="custom-form exitpop-form">
               <h2 style="text-align:center;" class="ng-binding">Enter your name &amp; email below</h2>
               <br>
-              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="name" placeholder="Enter your name here" required="" style="width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
+              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="name" placeholder="Enter your name here" required="" style="width: 500px; height: 50px; background-color: rgb(255, 255, 255); font-size: 16px; font-style: normal; text-align: left; border-radius: 5px; border-width: 3px; border-color: rgb(221, 221, 221);">
               <br>
-              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="email" placeholder="Enter your email here" style="margin-top: -10px; width: 500px; height: 50px; background-color: rgb(255, 255, 255); text-align: left; border-radius: 5px; border-width: 1px; border-color: rgb(221, 221, 221);">
+              <input ng-style="styles.inputTF.styles" type="text" class="form-control input-style" name="email" placeholder="Enter your email here" style="margin-top: -10px; width: 500px; height: 50px; background-color: rgb(255, 255, 255); font-size: 16px; font-style: normal; text-align: left; border-radius: 5px; border-width: 3px; border-color: rgb(221, 221, 221);">
               <br>
             </div>
             <!-- custom form -->
-            <button ng-style="styles.button.styles" class="button-style exitpop-button ng-binding" style="width: 400px; height: 55px; background-color: rgb(76, 175, 80); color: rgb(255, 255, 255); font-family: Roboto, sans-serif; font-size: 20px; font-style: normal; border-radius: 5px;">Free Instant Access</button>
+            <button ng-style="styles.button.styles" class="button-style exitpop-button ng-binding" style="margin-top: 0px; width: 400px; height: 55px; background-color: rgb(76, 175, 80); color: rgb(255, 255, 255); font-family: Roboto, sans-serif; font-size: 20px; font-style: normal; border-radius: 5px;">Free Instant Access</button>
           </div>
         </div>
       </div>
     </div>
-</body></html>
+
+    <script>
+    function submitform() {
+      console.log('submit');
+
+      var f = $("#frame").contents();
+      f.find("#webform > input[name*='name']").val( $("#myname").val() );
+      f.find("#webform > input[name*='email']").val( $("#myemail").val() )
+      f.find("#webform").submit();
+
+
+    }
+    </script>
+
+
+<script>    function submitform() { console.log("redirect");  setTimeout(function() {        location.href = "http://williamyap.co";   }, 1500)  }  </script>    <iframe id="frame" src="/aaa/webform.html" style="display: none">      Sorry your browser does not support inline frames.    </iframe>  </body></html>

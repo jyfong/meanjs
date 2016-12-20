@@ -113,7 +113,8 @@ module.exports.initSession = function (app, db) {
     cookie: {
       maxAge: config.sessionCookie.maxAge,
       httpOnly: config.sessionCookie.httpOnly,
-      secure: config.sessionCookie.secure && config.secure.ssl
+      secure: config.sessionCookie.secure && config.secure.ssl,
+      // domain:'.williamyap.co'
     },
     name: config.sessionKey,
     store: new MongoStore({

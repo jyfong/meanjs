@@ -101,7 +101,7 @@ module.exports = function (app) {
 
 
 
-    var page = new Page({});
+    var page = new Page({ name: campaign.squeeze.name, path: campaign.squeeze.path });
     page.save(function(err) {
 
       campaign.squeeze.page = page.id;
@@ -166,10 +166,28 @@ module.exports = function (app) {
     });
 
 
+
+    var config = JSON.parse(req.body.config);
+
     var fs = require('fs');
+    fs.writeFile("public/"+req.user.subdomain+"/"+"webform.html", config.settings.emailSettings.email, function(err) {
+        if(err) {
+            return console.log(err);
+        }
+    }); 
+
+    var template = '<title>'+config.settings.meta.title+'</title><meta name="description" content="'+config.settings.meta.description+'"><meta name="keywords" content="'+config.settings.meta.keywords+'"><link rel="icon" href="'+config.settings.meta.icon+'">'
+
+    var webform = '<script>    function submitform() { console.log("redirect");  setTimeout(function() {        location.href = "'+config.settings.emailSettings.redirectUrl+'";   }, 1500)  }  </script>    <iframe id="frame" src="/'+req.user.subdomain+'/webform.html" style="display: none">      Sorry your browser does not support inline frames.    </iframe>  '
+
     fs.readFile("modules/core/server/views/template1.html", 'utf8', function(err, data) {
 
-      fs.writeFile("public/"+req.user.subdomain+"/"+req.body.path+".html", data+req.body.html+"</body></html>", function(err) {
+      if (!fs.existsSync("public/"+req.user.subdomain)){
+          fs.mkdirSync("public/"+req.user.subdomain);
+      }
+
+      fs.writeFile("public/"+req.user.subdomain+"/"+req.body.path+".html", 
+                data+template+"</head><body>" +req.body.html+webform+"</body></html>", function(err) {
           if(err) {
               return console.log(err);
           }
