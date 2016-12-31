@@ -13,7 +13,8 @@ module.exports = {
         'public/lib/angular-color-picker/dist/angularjs-color-picker.css',
         'public/lib/angular-color-picker/dist/themes/angularjs-color-picker-bootstrap.css',
         'public/lib/angular-bootstrap-colorpicker/css/colorpicker.css',
-        'public/lib/angularjs-slider/dist/rzslider.css'
+        'public/lib/angularjs-slider/dist/rzslider.css',
+        'public/lib/textAngular/dist/textAngular.css'
         // endbower
       ],
       js: [
@@ -39,7 +40,11 @@ module.exports = {
         'public/lib/angular-color-picker/dist/angularjs-color-picker.js',
         'public/lib/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js',
         'public/lib/jquery-ui/jquery-ui.js',
-        'public/lib/angularjs-slider/dist/rzslider.js'
+        'public/lib/angularjs-slider/dist/rzslider.js',
+        'public/lib/textAngular/dist/textAngular-rangy.min.js',
+        'public/lib/textAngular/dist/textAngular-sanitize.min.js',
+        'public/lib/textAngular/dist/textAngular.min.js'
+
 
 
         // endbower

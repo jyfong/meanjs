@@ -72,7 +72,7 @@ exports.renderNotFound = function (req, res) {
 exports.images = function (req, res) {
   var fs = require('fs');
 
-  fs.readdir('public/'+req.user.subdomain, function(err, items) {
+  fs.readdir('public/'+req.user.subdomain+'/images', function(err, items) {
     var itemsUrl = items.map(function(item) {
       return '/'+req.user.subdomain+'/'+item;
     });

@@ -101,10 +101,12 @@ module.exports = function (app) {
 
 
 
-    var page = new Page({ name: campaign.squeeze.name, path: campaign.squeeze.path });
+    var page = new Page({ name: campaign.squeeze.name, path: campaign.squeeze.path + (Math.round(Math.random()*100000000)) });
     page.save(function(err) {
 
       campaign.squeeze.page = page.id;
+      campaign.squeeze.name = page.name;
+      campaign.squeeze.path = page.path;
       campaign.save(function(err) {
         res.json({message: 'Success'});
       });

@@ -87,25 +87,19 @@ var debug;
 
     $scope.read();
 
-    $scope.loadingtime = 500;
     $scope.preview = function(href) {
-      $scope.update();
+      // $scope.update();
       console.log('href ', href)
 
-      setTimeout(function() {
-        window.open(href, '_blank');
-      }, $scope.loadingtime)
 
-
-        $("#loading2").show();
-        setTimeout(function() {
-          $("#loading2").hide();
-        }, $scope.loadingtime)
-      
+      var config = JSON.stringify({ settings: $scope.settings, styles: $scope.styles });
+      if ($scope.page.config != config) {
+        window.alert("Please save before preview")
+      } else {
+        window.open(href, '_blank')
+      }
     }
 
-    $("#loading").hide();
-    $("#loading2").hide();
     $scope.update = function() {
         var html = $("#abcdef").html();
         var config = JSON.stringify({ settings: $scope.settings, styles: $scope.styles });
@@ -115,10 +109,6 @@ var debug;
         });
 
 
-        $("#loading").show();
-        setTimeout(function() {
-          $("#loading").hide();
-        }, $scope.loadingtime)
     }
 
 
@@ -182,7 +172,7 @@ var debug;
       },
       container: {
         id: 'container',
-        pageWidth: '',
+        pageWidth: 'col-md-8',
         'margin-top': '70px',
         'padding-top': '30px',
         'padding-left': '0px',

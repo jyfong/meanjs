@@ -19,7 +19,8 @@
     "angular-color-picker": "angularjs-color-picker#^2.5.0",
     "angular-bootstrap-colorpicker": "^3.0.25",
     "jquery-ui": "^1.12.1",
-    "angularjs-slider": "^5.8.7"
+    "angularjs-slider": "^5.8.7",
+    "textAngular": "^1.5.16"
   },
   "overrides": {
     "bootstrap": {

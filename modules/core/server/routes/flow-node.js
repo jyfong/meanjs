@@ -4,7 +4,7 @@ var fs = require('fs'),
     Stream = require('stream').Stream;
 
 module.exports = flow = function(user) {
-    temporaryFolder = 'public/' + user;
+    temporaryFolder = 'public/' + user + '/images';
     console.log('temporaryFolder', temporaryFolder)
     var $ = this;
     $.temporaryFolder = temporaryFolder;
